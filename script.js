@@ -1,13 +1,13 @@
 const regions = [
-  { id: 'cnyv', name: 'Yangtze River Delta, China', description: 'Densely populated floodplain prone to seasonal monsoon flooding.', coords: [120.5, 31.2] },
-  { id: 'crgs', name: 'Ganges-Brahmaputra Delta, Bangladesh', description: 'One of the most flood-vulnerable deltas on Earth.', coords: [89.5, 23.0] },
-  { id: 'cyrz', name: 'Rhine-Meuse Delta, Netherlands', description: 'Low-lying region protected by extensive flood defense systems.', coords: [4.5, 51.9] },
-  { id: 'hueg', name: 'Mekong Delta, Vietnam', description: 'Agricultural heartland facing rising sea levels and seasonal floods.', coords: [106.0, 10.0] },
-  { id: 'iusn', name: 'Mississippi River Basin, USA', description: 'Historic flood zone spanning the central United States.', coords: [-91.1, 32.3] },
-  { id: 'omqk', name: 'Indus River Valley, Pakistan', description: 'Region devastated by catastrophic flooding in recent years.', coords: [68.5, 27.5] },
-  { id: 'qszb', name: 'Niger River Inland Delta, Mali', description: 'Seasonal floodplain critical for agriculture in the Sahel.', coords: [-4.2, 14.5] },
-  { id: 'qxrg', name: 'Amazon Basin, Brazil', description: 'Largest river basin with massive annual flood cycles.', coords: [-60.0, -3.1] },
-  { id: 'ynon', name: 'Nile Delta, Egypt', description: 'Historically flood-dependent region now facing coastal erosion.', coords: [31.0, 31.2] },
+  { id: 'cnyv', name: 'Chao Phraya Basin, Southeast Asia', description: 'Highly meandering, sediment-heavy river in a tropical agricultural region.', coords: [100.5, 14.5] },
+  { id: 'crgs', name: 'Jamuna River, Bangladesh', description: 'Bangabandhu Bridge crossing the highly braided Brahmaputra River.', coords: [89.78, 24.38] },
+  { id: 'cyrz', name: 'Ganges River, Patna, India', description: 'Mahatma Gandhi Setu bridge crossing the wide, sandy Ganges.', coords: [85.1, 25.62] },
+  { id: 'hueg', name: 'South Florida, USA', description: 'Master-planned canal community near the Everglades wetlands.', coords: [-80.4, 26.0] },
+  { id: 'iusn', name: 'Brisbane Airport, Australia', description: 'Brisbane Airport alongside the winding Brisbane River.', coords: [153.1, -27.38] },
+  { id: 'omqk', name: 'Yangon River, Myanmar', description: 'Confluence of the Yangon and Bago rivers near Thilawa port.', coords: [96.25, 16.75] },
+  { id: 'qszb', name: 'Ayutthaya, Thailand', description: 'Historic island city at the confluence of three major rivers.', coords: [100.56, 14.35] },
+  { id: 'qxrg', name: 'Trois-Rivieres, Quebec, Canada', description: 'Pont Laviolette crossing the St. Lawrence River with ribbon farms.', coords: [-72.55, 46.35] },
+  { id: 'ynon', name: 'Mississippi River, Louisiana, USA', description: 'French colonial ribbon farm settlements along the Mississippi.', coords: [-90.2, 29.95] },
 ];
 const map = new maplibregl.Map({
   container: 'map',
