@@ -14,11 +14,9 @@ body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background
 #region-list.hidden { opacity: 0; max-height: 0; margin-top: 0; padding-top: 0; border-top: none; pointer-events: none; overflow: hidden; }
 #region-list li { padding: 8px 10px; font-size: 0.82rem; color: rgba(255,255,255,0.7); border-radius: 6px; cursor: pointer; transition: background 0.15s, color 0.15s; }
 #region-list li:hover { background: rgba(79,195,247,0.15); color: #4fc3f7; }
-.marker { width: 28px; height: 28px; border-radius: 50%; background: radial-gradient(circle, rgba(244,67,54,0.9) 0%, rgba(244,67,54,0.3) 60%, transparent 70%); border: 2px solid rgba(255,255,255,0.8); cursor: pointer; transition: transform 0.2s ease; position: relative; }
-.marker:hover { transform: scale(1.3); }
-.marker::after { content: ''; position: absolute; top: -4px; left: -4px; width: 36px; height: 36px; border-radius: 50%; border: 2px solid rgba(244,67,54,0.5); animation: pulse-ring 2s ease-out infinite; }
-@keyframes pulse-ring { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(2.2); opacity: 0; } }
-.marker-label { position: absolute; bottom: -22px; left: 50%; transform: translateX(-50%); font-size: 0.65rem; font-weight: 600; color: #fff; text-shadow: 0 1px 4px rgba(0,0,0,0.8); white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity 0.2s; }
+.marker { width: 16px; height: 16px; border-radius: 50%; background: rgba(244,67,54,0.9); border: 2px solid rgba(255,255,255,0.9); cursor: pointer; transition: transform 0.2s ease; box-shadow: 0 0 8px rgba(244,67,54,0.6); }
+.marker:hover { transform: scale(1.4); }
+.marker-label { position: absolute; top: 50%; left: calc(100% + 8px); transform: translateY(-50%); font-size: 0.7rem; font-weight: 600; color: #fff; text-shadow: 0 1px 4px rgba(0,0,0,0.9); white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity 0.2s; background: rgba(0,0,0,0.5); padding: 3px 8px; border-radius: 4px; }
 .marker:hover .marker-label { opacity: 1; }
 #modal-backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(6px); z-index: 100; display: flex; justify-content: center; align-items: center; opacity: 1; transition: opacity 0.3s ease; }
 #modal-backdrop.hidden { opacity: 0; pointer-events: none; }
