@@ -28,7 +28,7 @@ map.on('load', () => {
       map.flyTo({ center: region.coords, zoom: 7, duration: 1800, essential: true });
       setTimeout(() => openModal(region), 900);
     });
-    new maplibregl.Marker({ element: el }).setLngLat(region.coords).addTo(map);
+    new maplibregl.Marker({ element: el, anchor: 'center' }).setLngLat(region.coords).addTo(map);
   });
 });
 const backdrop = document.getElementById('modal-backdrop');
@@ -56,4 +56,24 @@ backdrop.addEventListener('click', (e) => { if (e.target === backdrop) closeModa
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 modalSlider.addEventListener('input', (e) => {
   modalContainer.style.setProperty('--clip-right', (100 - e.target.value) + '%');
+});
+const regionList = document.getElementById('region-list');
+const infoPanelHeader = document.getElementById('info-panel-header');
+regions.forEach((region) => {
+  const li = document.createElement('li');
+  li.textContent = region.name;
+  li.addEventListener('click', () => {
+    regionList.classList.add('hidden');
+    map.flyTo({ center: region.coords, zoom: 7, duration: 1800, essential: true });
+    setTimeout(() => openModal(region), 900);
+  });
+  regionList.appendChild(li);
+});
+infoPanelHeader.addEventListener('click', () => {
+  regionList.classList.toggle('hidden');
+});
+document.addEventListener('click', (e) => {
+  if (!document.getElementById('info-panel').contains(e.target)) {
+    regionList.classList.add('hidden');
+  }
 });
