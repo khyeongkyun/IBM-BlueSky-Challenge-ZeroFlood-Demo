@@ -2,67 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TerraMind BlueSky Challenge - "ZeroFlood"</title>
+  <title>ZeroFlood - Interactive Flood Risk Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="page-header">
-    <h1>TerraMind BlueSky Challenge<br><br>"ZeroFlood"<br><br></h1>
-    <p class="description">A smart, resource-efficient tool for predicting flood risk in data-scarce environments.</p>
-    <br>
-    <p class="description">Move BLUE DOT to check Flood Risk Zone (Red).</p>
-    <br>
-    <p class="description">Contact:<br><br>Hyeongkyun Kim - khyeongkyun@gmail.com<br><br>Orestis Oikonomou - oroikon@gmail.com</p>
-  </header>
-  <div class="gallery">
-    <div class="slider-container">
-      <img src="Demo/cnyv.png" alt="Before Image" class="before-image">
-      <img src="Demo/cnyv_mask.png" alt="After Image" class="after-image">
-      <input type="range" min="0" max="100" value="50" class="slider">
-    </div>
-    <div class="slider-container">
-      <img src="Demo/crgs.png" alt="Before Image" class="before-image">
-      <img src="Demo/crgs_mask.png" alt="After Image" class="after-image">
-      <input type="range" min="0" max="100" value="50" class="slider">
-    </div>
-    <div class="slider-container">
-      <img src="Demo/cyrz.png" alt="Before Image" class="before-image">
-      <img src="Demo/cyrz_mask.png" alt="After Image" class="after-image">
-      <input type="range" min="0" max="100" value="50" class="slider">
-    </div>
-    <div class="slider-container">
-      <img src="Demo/hueg.png" alt="Before Image" class="before-image">
-      <img src="Demo/hueg_mask.png" alt="After Image" class="after-image">
-      <input type="range" min="0" max="100" value="50" class="slider">
-    </div>
-    <div class="slider-container">
-      <img src="Demo/iusn.png" alt="Before Image" class="before-image">
-      <img src="Demo/iusn_mask.png" alt="After Image" class="after-image">
-      <input type="range" min="0" max="100" value="50" class="slider">
-    </div>
-    <div class="slider-container">
-      <img src="Demo/omqk.png" alt="Before Image" class="before-image">
-      <img src="Demo/omqk_mask.png" alt="After Image" class="after-image">
-      <input type="range" min="0" max="100" value="50" class="slider">
-    </div>
-    <div class="slider-container">
-      <img src="Demo/qszb.png" alt="Before Image" class="before-image">
-      <img src="Demo/qszb_mask.png" alt="After Image" class="after-image">
-      <input type="range" min="0" max="100" value="50" class="slider">
-    </div>
-    <div class="slider-container">
-      <img src="Demo/qxrg.png" alt="Before Image" class="before-image">
-      <img src="Demo/qxrg_mask.png" alt="After Image" class="after-image">
-      <input type="range" min="0" max="100" value="50" class="slider">
-    </div>
-    <div class="slider-container">
-      <img src="Demo/ynon.png" alt="Before Image" class="before-image">
-      <img src="Demo/ynon_mask.png" alt="After Image" class="after-image">
-      <input type="range" min="0" max="100" value="50" class="slider">
+  <div id="title-overlay">
+    <h1>ZeroFlood</h1>
+    <p>A smart, resource-efficient tool for predicting flood risk in data-scarce environments.</p>
+    <span class="hint">Click a marker to explore flood predictions</span>
+  </div>
+  <div id="info-panel">
+    <div id="info-panel-content">
+      <span class="label">Regions</span>
+      <span id="region-count">9 flood-prone areas</span>
     </div>
   </div>
+  <div id="map"></div>
+  <div id="modal-backdrop" class="hidden">
+    <div id="modal">
+      <button id="modal-close">&times;</button>
+      <h2 id="modal-title"></h2>
+      <p id="modal-description"></p>
+      <div class="slider-container" id="modal-slider-container">
+        <img id="modal-before" src="" alt="Satellite Image" class="before-image">
+        <img id="modal-after" src="" alt="Flood Risk Prediction" class="after-image">
+        <input type="range" min="0" max="100" value="50" class="slider" id="modal-slider">
+        <div class="slider-labels">
+          <span>Satellite</span>
+          <span>Flood Risk</span>
+        </div>
+      </div>
+      <div class="risk-legend">
+        <span class="legend-item"><span class="legend-dot high"></span> High Risk</span>
+        <span class="legend-item"><span class="legend-dot medium"></span> Medium Risk</span>
+        <span class="legend-item"><span class="legend-dot low"></span> Low Risk</span>
+      </div>
+    </div>
+  </div>
+  <div id="credits">
+    <span>TerraMind BlueSky Challenge</span>
+    <span>Hyeongkyun Kim &middot; Orestis Oikonomou</span>
+  </div>
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
