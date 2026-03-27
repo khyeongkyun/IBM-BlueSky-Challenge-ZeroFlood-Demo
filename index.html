@@ -25,13 +25,15 @@
       <button id="modal-close">&times;</button>
       <h2 id="modal-title"></h2>
       <p id="modal-description"></p>
-      <div class="slider-container" id="modal-slider-container">
-        <img id="modal-before" src="" alt="Satellite Image" class="before-image">
-        <img id="modal-after" src="" alt="Flood Risk Prediction" class="after-image">
-        <input type="range" min="0" max="100" value="50" class="slider" id="modal-slider">
-        <div class="slider-labels">
-          <span>Satellite</span>
-          <span>Flood Risk</span>
+      <div class="comparison-wrapper">
+        <div class="slider-container" id="modal-slider-container">
+          <img id="modal-before" src="" alt="Satellite Image" class="before-image">
+          <img id="modal-after" src="" alt="Flood Risk Prediction" class="after-image">
+        </div>
+        <div class="slider-control">
+          <span class="slider-label-left">Satellite</span>
+          <input type="range" min="0" max="100" value="50" class="slider" id="modal-slider">
+          <span class="slider-label-right">Flood Risk</span>
         </div>
       </div>
       <div class="risk-legend">
