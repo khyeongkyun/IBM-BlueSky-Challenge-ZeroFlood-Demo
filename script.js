@@ -39,10 +39,10 @@ const BASEMAPS = {
 };
 
 const EUROPE_VIEW_BOUNDS = [
-  [-25, 30],
+  [-25, 35.5],
   [65, 72],
 ];
-const SAMPLE_DATA_URL = "data/samples-v2.json?v=coords-4";
+const SAMPLE_DATA_URL = "data/samples-europe.json?v=europe-1";
 
 const state = {
   samples: [],
