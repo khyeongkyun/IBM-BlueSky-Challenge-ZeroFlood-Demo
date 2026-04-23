@@ -258,6 +258,12 @@
             The paper reports mIoU, F1, recall/HitRate, and precision/TrueAlarm. TerraMind is the strongest base
             GeoFM, and TiM variants often improve recall by injecting generated modality tokens.
           </p>
+          <ul class="result-takeaways">
+            <li><strong>SAR-only prediction is viable:</strong> TerraMind reaches 88.36 F1 from S1RTC alone, beating UNet by 3.70 points.</li>
+            <li><strong>TiM helps the single-modality case:</strong> TerraMind-TiM-l improves S1RTC to 89.12 F1 and lifts recall to 88.45.</li>
+            <li><strong>Optical input is also strong:</strong> S2L2A with TerraMind reaches 88.58 F1 with the highest S2 precision, 90.60.</li>
+            <li><strong>Two modalities set the best ceiling:</strong> S1RTC + S2L2A reaches 89.16 F1 and 91.25 precision with TerraMind.</li>
+          </ul>
           <div class="results-grid">
             <article class="result-table-card">
               <h3>S1RTC input</h3>
