@@ -1,54 +1,340 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZeroFlood - Interactive Flood Risk Map</title>
-  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div id="title-overlay">
-    <h1>ZeroFlood</h1>
-    <p>A smart, resource-efficient tool for predicting flood risk in data-scarce environments.</p>
-    <span class="hint">Click a marker to explore flood predictions</span>
-  </div>
-  <div id="info-panel">
-    <div id="info-panel-header">
-      <span class="label">Regions</span>
-      <span id="region-count">9 flood-prone areas <span class="arrow">&#9662;</span></span>
-    </div>
-    <ul id="region-list" class="hidden"></ul>
-  </div>
-  <div id="map"></div>
-  <div id="modal-backdrop" class="hidden">
-    <div id="modal">
-      <button id="modal-close">&times;</button>
-      <h2 id="modal-title"></h2>
-      <p id="modal-description"></p>
-      <div class="comparison-wrapper">
-        <div class="slider-container" id="modal-slider-container">
-          <img id="modal-before" src="" alt="Satellite Image" class="before-image">
-          <img id="modal-after" src="" alt="Flood Risk Prediction" class="after-image">
-        </div>
-        <div class="slider-control">
-          <span class="slider-label-left">Satellite</span>
-          <input type="range" min="0" max="100" value="50" class="slider" id="modal-slider">
-          <span class="slider-label-right">Flood Risk</span>
-        </div>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="ZeroFlood paper page and interactive demo for flood hazard mapping from single-modality SAR using geo-foundation models."
+    >
+    <title>ZeroFlood | Flood Hazard Mapping from Single-Modality SAR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="nav-logo" href="#overview">ZeroFlood</a>
+      <div class="nav-links">
+        <a href="#abstract">Abstract</a>
+        <a href="#method">Method</a>
+        <a href="#dataset">Dataset</a>
+        <a href="#demo">Demo</a>
+        <a href="#results">Results</a>
+        <a href="#citation">Citation</a>
       </div>
-      <div class="risk-legend">
-        <span class="legend-item"><span class="legend-dot high"></span> High Risk</span>
-        <span class="legend-item"><span class="legend-dot medium"></span> Medium Risk</span>
-        <span class="legend-item"><span class="legend-dot low"></span> Low Risk</span>
-      </div>
-    </div>
-  </div>
-  <div id="credits">
-    <span>TerraMind BlueSky Challenge</span>
-    <span>Hyeongkyun Kim &middot; Orestis Oikonomou</span>
-  </div>
-  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
-  <script src="script.js"></script>
-</body>
+    </nav>
+
+    <main>
+      <section class="hero" id="overview">
+        <div class="hero-shell">
+          <p class="eyebrow">EUSAR 2026 paper companion</p>
+          <h1>ZeroFlood: Flood Hazard Mapping from Single-Modality SAR Using Geo-Foundation Models</h1>
+          <p class="hero-subtitle">
+            A paper-style project page and embedded demo for predicting flood hazard maps with minimal
+            Earth-observation inputs in data-scarce regions.
+          </p>
+
+          <p class="authors">
+            Hyeongkyun Kim <span>German Aerospace Center (DLR)</span> and Orestis Oikonomou
+            <span>ETH Zurich, ETH AI Center</span>
+          </p>
+
+          <div class="button-row">
+            <a class="button primary" href="paper.pdf" target="_blank" rel="noreferrer">Read paper PDF</a>
+            <a class="button" href="https://github.com/khyeongkyun/zeroflood" target="_blank" rel="noreferrer">Experiment code</a>
+            <a class="button" href="https://huggingface.co/datasets/khyeongkyun/ZeroFlood" target="_blank" rel="noreferrer">Dataset</a>
+          </div>
+
+          <div class="hero-stats" aria-label="Project highlights">
+            <div>
+              <strong>226</strong>
+              <span>interactive test samples</span>
+            </div>
+            <div>
+              <strong>29</strong>
+              <span>mapped regions/countries</span>
+            </div>
+            <div>
+              <strong>89.12</strong>
+              <span>best S1RTC F1 with TiM-l</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="alt" id="tldr">
+        <div class="section-inner wide">
+          <p class="section-kicker">TL;DR</p>
+          <div class="tldr-grid">
+            <article class="tldr-card">
+              <span>1</span>
+              <p>ZeroFlood predicts flood-prone regions from minimal EO inputs, focusing on single-modality SAR for data-scarce settings.</p>
+            </article>
+            <article class="tldr-card">
+              <span>2</span>
+              <p>TerraMind supplies reusable geospatial representations, while Thinking-in-Modality generates auxiliary cues such as LULC and DEM.</p>
+            </article>
+            <article class="tldr-card">
+              <span>3</span>
+              <p>The embedded explorer lets you choose a mapped region, switch basemaps, compare EO modalities, and overlay multiple model predictions.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="abstract">
+        <div class="section-inner">
+          <p class="section-kicker">Abstract</p>
+          <h2>Flood hazard mapping with minimal resources</h2>
+          <div class="prose">
+            <p>
+              Flood hazard mapping is essential for disaster prevention but remains challenging in data-scarce regions,
+              where traditional hydrodynamic models require extensive geophysical inputs. ZeroFlood leverages
+              geospatial foundation models to predict flood hazard maps from single-modality Earth-observation data,
+              specifically SAR imagery.
+            </p>
+            <p>
+              We construct a dataset that pairs EO data with flood hazard simulations across the European continent and
+              evaluate recent GeoFMs for flood hazard segmentation. TerraMind reaches an F1-score of 88.36%, exceeding
+              supervised baselines by more than 3 percentage points, and Thinking-in-Modality improves performance
+              further by compensating for missing spatial information such as LULC and DEM.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="alt" id="method">
+        <div class="section-inner wide">
+          <p class="section-kicker">Method</p>
+          <h2>The ZeroFlood pipeline</h2>
+          <div class="method-layout">
+            <figure class="paper-figure">
+              <img src="assets/model.png" alt="ZeroFlood model architecture">
+              <figcaption>
+                Minimal inputs (S1RTC, S2L2A, or both) pass through TerraMind and optional Thinking-in-Modality
+                token generation before UPerNet predicts the flood hazard map.
+              </figcaption>
+            </figure>
+            <div class="method-steps">
+              <article>
+                <span>A</span>
+                <h3>Pair EO with flood simulations</h3>
+                <p>TerraMesh modalities are spatially aligned with LISFLOOD-FP hazard simulations to create training targets.</p>
+              </article>
+              <article>
+                <span>B</span>
+                <h3>Train GeoFM flood decoders</h3>
+                <p>GeoFM encoders are frozen and connected to a UPerNet decoder for flood hazard segmentation.</p>
+              </article>
+              <article>
+                <span>C</span>
+                <h3>Recover missing modalities</h3>
+                <p>TiM generates auxiliary tokens, for example DEM or LULC, from the available EO modality.</p>
+              </article>
+              <article>
+                <span>D</span>
+                <h3>Deploy in sparse-data regions</h3>
+                <p>The trained model can infer hazard masks from SAR imagery where hydrodynamic inputs are unavailable.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="dataset">
+        <div class="section-inner wide">
+          <p class="section-kicker">Dataset</p>
+          <h2>TerraMesh inputs plus LISFLOOD-FP hazard masks</h2>
+          <div class="dataset-grid">
+            <figure class="paper-figure">
+              <img src="assets/dataset_1.png" alt="ZeroFlood dataset creation diagram">
+              <figcaption>EO samples are filtered, cropped, aligned, and matched to flood hazard masks.</figcaption>
+            </figure>
+            <figure class="paper-figure tall">
+              <img src="assets/dataset_2.png" alt="Spatial heat map of ZeroFlood samples">
+              <figcaption>Spatial heat map of training samples at one-degree resolution.</figcaption>
+            </figure>
+          </div>
+          <div class="stat-grid">
+            <div><strong>20,868</strong><span>train samples</span></div>
+            <div><strong>5,217</strong><span>validation samples</span></div>
+            <div><strong>226</strong><span>test/demo samples</span></div>
+            <div><strong>10 m</strong><span>EO tile resolution</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="alt" id="demo">
+        <div class="section-inner wide">
+          <p class="section-kicker">Interactive demo</p>
+          <h2>Explore flood predictions by region, modality, and model</h2>
+          <p class="demo-intro">
+            Select a pin or choose a region from the controls. The map starts in a light style to avoid the previous
+            black-map view, and you can switch to satellite or terrain while keeping the pins at their corrected
+            longitude/latitude coordinates.
+          </p>
+
+          <div class="demo-shell">
+            <div class="map-card">
+              <div class="map-toolbar" aria-label="Map style controls">
+                <button class="map-style active" data-style="light">Light</button>
+                <button class="map-style" data-style="satellite">Satellite</button>
+                <button class="map-style" data-style="terrain">Terrain</button>
+              </div>
+              <div id="zf-map" aria-label="Map of ZeroFlood validation samples"></div>
+              <div class="map-fallback" id="map-fallback" hidden>
+                Map tiles are unavailable. Use the region and sample selectors to explore the data.
+              </div>
+            </div>
+
+            <aside class="explorer-card" aria-label="Selected sample explorer">
+              <div class="selector-grid">
+                <label>
+                  Region
+                  <select id="country-select"></select>
+                </label>
+                <label>
+                  Sample
+                  <select id="sample-select"></select>
+                </label>
+                <label>
+                  Context layer
+                  <select id="input-select"></select>
+                </label>
+                <label>
+                  Flood overlay
+                  <select id="overlay-select"></select>
+                </label>
+              </div>
+
+              <div class="sample-meta">
+                <p class="meta-label">Selected location</p>
+                <h3 id="sample-title">Loading samples...</h3>
+                <p id="sample-coords"></p>
+              </div>
+
+              <div class="comparison" id="comparison">
+                <img id="base-image" class="base-image" alt="Selected Earth-observation context layer">
+                <img id="overlay-image" class="overlay-image" alt="Selected flood hazard overlay">
+              </div>
+              <div class="slider-row">
+                <span id="base-label">Context</span>
+                <input id="overlay-slider" type="range" min="0" max="100" value="58" aria-label="Reveal flood overlay">
+                <span id="overlay-label">Overlay</span>
+              </div>
+
+              <div class="featured-row" id="featured-row" aria-label="Featured samples"></div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section id="results">
+        <div class="section-inner wide">
+          <p class="section-kicker">Results</p>
+          <h2>GeoFMs improve flood hazard segmentation</h2>
+          <p class="prose results-lead">
+            The paper reports mIoU, F1, recall/HitRate, and precision/TrueAlarm. TerraMind is the strongest base
+            GeoFM, and TiM variants often improve recall by injecting generated modality tokens.
+          </p>
+          <div class="results-grid">
+            <article class="result-table-card">
+              <h3>S1RTC input</h3>
+              <table>
+                <thead><tr><th>Model</th><th>mIoU</th><th>F1</th><th>Recall</th><th>Precision</th></tr></thead>
+                <tbody>
+                  <tr><td>UNet</td><td>80.42</td><td>84.66</td><td>81.00</td><td>88.67</td></tr>
+                  <tr><td>ViT</td><td>80.35</td><td>84.64</td><td>81.46</td><td>88.08</td></tr>
+                  <tr><td>SSL4EO-MAE</td><td>81.09</td><td>85.23</td><td>81.39</td><td>89.44</td></tr>
+                  <tr><td>CROMA</td><td>79.30</td><td>83.63</td><td>79.72</td><td>87.95</td></tr>
+                  <tr><td>DOFA</td><td>82.86</td><td>86.90</td><td>84.80</td><td>89.11</td></tr>
+                  <tr><td>TerraMind</td><td>84.56</td><td>88.36</td><td>86.77</td><td>90.02</td></tr>
+                  <tr class="best"><td>TerraMind-TiM-l</td><td>85.41</td><td>89.12</td><td>88.45</td><td>89.80</td></tr>
+                  <tr><td>TerraMind-TiM-ds</td><td>85.08</td><td>88.82</td><td>87.62</td><td>90.05</td></tr>
+                  <tr><td>TerraMind-TiM-dsl</td><td>84.73</td><td>88.54</td><td>87.53</td><td>89.57</td></tr>
+                </tbody>
+              </table>
+            </article>
+            <article class="result-table-card">
+              <h3>S2L2A input</h3>
+              <table>
+                <thead><tr><th>Model</th><th>mIoU</th><th>F1</th><th>Recall</th><th>Precision</th></tr></thead>
+                <tbody>
+                  <tr><td>UNet</td><td>81.93</td><td>85.99</td><td>82.45</td><td>89.85</td></tr>
+                  <tr><td>ViT</td><td>82.19</td><td>86.36</td><td>84.64</td><td>88.15</td></tr>
+                  <tr><td>SSL4EO-MAE</td><td>80.84</td><td>85.16</td><td>82.93</td><td>87.50</td></tr>
+                  <tr><td>CROMA</td><td>82.35</td><td>86.46</td><td>84.33</td><td>88.71</td></tr>
+                  <tr><td>DOFA</td><td>83.09</td><td>87.08</td><td>84.71</td><td>89.59</td></tr>
+                  <tr class="best"><td>TerraMind</td><td>84.86</td><td>88.58</td><td>86.66</td><td>90.60</td></tr>
+                  <tr><td>TerraMind-TiM-s</td><td>84.69</td><td>88.45</td><td>86.56</td><td>90.42</td></tr>
+                  <tr><td>TerraMind-TiM-sl</td><td>84.41</td><td>88.22</td><td>86.42</td><td>90.10</td></tr>
+                  <tr><td>TerraMind-TiM-dls</td><td>84.58</td><td>88.38</td><td>86.83</td><td>89.99</td></tr>
+                </tbody>
+              </table>
+            </article>
+            <article class="result-table-card">
+              <h3>S1RTC + S2L2A input</h3>
+              <table>
+                <thead><tr><th>Model</th><th>mIoU</th><th>F1</th><th>Recall</th><th>Precision</th></tr></thead>
+                <tbody>
+                  <tr><td>UNet</td><td>81.67</td><td>85.84</td><td>83.19</td><td>88.66</td></tr>
+                  <tr><td>ViT</td><td>82.36</td><td>86.48</td><td>84.49</td><td>88.57</td></tr>
+                  <tr><td>CROMA</td><td>81.67</td><td>85.85</td><td>83.29</td><td>88.57</td></tr>
+                  <tr><td>DOFA</td><td>83.00</td><td>87.06</td><td>85.41</td><td>88.77</td></tr>
+                  <tr class="best"><td>TerraMind</td><td>85.57</td><td>89.16</td><td>87.17</td><td>91.25</td></tr>
+                  <tr><td>TerraMind-TiM-d</td><td>85.40</td><td>89.04</td><td>87.17</td><td>90.98</td></tr>
+                  <tr><td>TerraMind-TiM-dl</td><td>85.43</td><td>89.08</td><td>87.51</td><td>90.70</td></tr>
+                </tbody>
+              </table>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="alt" id="citation">
+        <div class="section-inner">
+          <p class="section-kicker">Citation</p>
+          <h2>Cite ZeroFlood</h2>
+          <pre class="bibtex" id="bibtex">@article{kim2025zeroflood,
+  title={ZeroFlood: Flood Hazard Mapping from Single-Modality SAR Using Geo-Foundation Models},
+  author={Kim, Hyeongkyun and Oikonomou, Orestis},
+  journal={arXiv preprint arXiv:2510.23364},
+  year={2025}
+}
+
+@misc{zerofloodCode2026,
+  title={zeroflood},
+  author={Kim, Hyeongkyun},
+  year={2026},
+  publisher={GitHub},
+  journal={GitHub repository},
+  url={https://github.com/khyeongkyun/zeroflood}
+}
+
+@misc{zerofloodDataset2026,
+  title={ZeroFlood},
+  author={Kim, Hyeongkyun},
+  year={2026},
+  publisher={Hugging Face},
+  journal={Hugging Face dataset},
+  url={https://huggingface.co/datasets/khyeongkyun/ZeroFlood}
+}</pre>
+          <button class="copy-button" id="copy-citation">Copy BibTeX</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>ZeroFlood demo page rebuilt from the SIGS paper-page structure and the BlueSky Challenge prototype.</p>
+    </footer>
+
+    <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

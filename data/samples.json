@@ -1,0 +1,1849 @@
+{
+  "samples": [
+    {
+      "id": "majortom_val_0042415",
+      "lon": 39.067232078823416,
+      "lat": 51.72780572142556,
+      "location": "Russia",
+      "featured": true,
+      "rank": 0
+    },
+    {
+      "id": "majortom_val_0008701",
+      "lon": 39.067126656750425,
+      "lat": 51.6565936323588,
+      "location": "Russia",
+      "featured": true,
+      "rank": 1
+    },
+    {
+      "id": "majortom_val_0016432",
+      "lon": -8.675541840204883,
+      "lat": 39.242923616847925,
+      "location": "Portugal",
+      "featured": true,
+      "rank": 2
+    },
+    {
+      "id": "majortom_val_0001137",
+      "lon": 2.22818582973337,
+      "lat": 48.85393026798181,
+      "location": "France",
+      "featured": true,
+      "rank": 3
+    },
+    {
+      "id": "majortom_val_0055210",
+      "lon": 2.228550646904247,
+      "lat": 48.83018334336816,
+      "location": "France",
+      "featured": true,
+      "rank": 4
+    },
+    {
+      "id": "majortom_val_0003621",
+      "lon": 38.10833148662739,
+      "lat": 45.30377256067098,
+      "location": "Russia",
+      "featured": true,
+      "rank": 5
+    },
+    {
+      "id": "majortom_val_0009714",
+      "lon": 7.740215392284373,
+      "lat": 47.237771015819135,
+      "location": "Switzerland",
+      "featured": true,
+      "rank": 6
+    },
+    {
+      "id": "majortom_val_0024874",
+      "lon": 16.9575556888554,
+      "lat": 60.32509586355646,
+      "location": "Sweden",
+      "featured": true,
+      "rank": 7
+    },
+    {
+      "id": "majortom_val_0048608",
+      "lon": 17.35578594347183,
+      "lat": 51.52335039910748,
+      "location": "Poland",
+      "featured": true,
+      "rank": 8
+    },
+    {
+      "id": "majortom_val_0003929",
+      "lon": 23.153212565890147,
+      "lat": 42.428050877774155,
+      "location": "Bulgaria",
+      "featured": true,
+      "rank": 9
+    },
+    {
+      "id": "majortom_val_0030860",
+      "lon": 24.32374913925407,
+      "lat": 45.68473151232996,
+      "location": "Romania",
+      "featured": false,
+      "rank": 10000
+    },
+    {
+      "id": "majortom_val_0010551",
+      "lon": 27.94870718047486,
+      "lat": 44.78786332129121,
+      "location": "Romania",
+      "featured": false,
+      "rank": 10001
+    },
+    {
+      "id": "majortom_val_0020897",
+      "lon": 15.628543580738157,
+      "lat": 53.32074234381719,
+      "location": "Poland",
+      "featured": false,
+      "rank": 10002
+    },
+    {
+      "id": "majortom_val_0031240",
+      "lon": 35.352526286325165,
+      "lat": 49.434536141868406,
+      "location": "Ukraine",
+      "featured": false,
+      "rank": 10003
+    },
+    {
+      "id": "majortom_val_0021028",
+      "lon": 40.708140507813106,
+      "lat": 45.9549133826006,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10004
+    },
+    {
+      "id": "majortom_val_0021274",
+      "lon": 21.74766280655237,
+      "lat": 41.77590825403622,
+      "location": "North Macedonia",
+      "featured": false,
+      "rank": 10005
+    },
+    {
+      "id": "majortom_val_0011524",
+      "lon": 25.522852393211593,
+      "lat": 58.01695385706492,
+      "location": "Estonia",
+      "featured": false,
+      "rank": 10006
+    },
+    {
+      "id": "majortom_val_0011769",
+      "lon": 20.879233325678,
+      "lat": 39.644489270028274,
+      "location": "Greece",
+      "featured": false,
+      "rank": 10008
+    },
+    {
+      "id": "majortom_val_0032369",
+      "lon": 59.62275256748426,
+      "lat": 56.01325844487896,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10009
+    },
+    {
+      "id": "majortom_val_0011909",
+      "lon": 28.251151630672915,
+      "lat": 39.24187745567168,
+      "location": "Turkey",
+      "featured": false,
+      "rank": 10010
+    },
+    {
+      "id": "majortom_val_0022208",
+      "lon": 19.47926696412628,
+      "lat": 68.29782660473778,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10011
+    },
+    {
+      "id": "majortom_val_0032517",
+      "lon": 46.46767823830953,
+      "lat": 51.769500584060864,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10012
+    },
+    {
+      "id": "majortom_val_0001541",
+      "lon": 46.50592458265586,
+      "lat": 51.76901678077116,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10013
+    },
+    {
+      "id": "majortom_val_0032807",
+      "lon": 39.25708927608099,
+      "lat": 55.41022514722151,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10014
+    },
+    {
+      "id": "majortom_val_0033014",
+      "lon": 19.412022689715595,
+      "lat": 68.34456852285807,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10015
+    },
+    {
+      "id": "majortom_val_0033066",
+      "lon": 18.588316914895344,
+      "lat": 46.31512157031716,
+      "location": "Hungary",
+      "featured": false,
+      "rank": 10016
+    },
+    {
+      "id": "majortom_val_0022930",
+      "lon": 30.891690943467545,
+      "lat": 68.54566474636701,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10017
+    },
+    {
+      "id": "majortom_val_0012700",
+      "lon": 14.523743675280437,
+      "lat": 58.5967076476137,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10018
+    },
+    {
+      "id": "majortom_val_0012714",
+      "lon": 13.959216945910219,
+      "lat": 47.752791813032,
+      "location": "Austria",
+      "featured": false,
+      "rank": 10019
+    },
+    {
+      "id": "majortom_val_0033272",
+      "lon": 30.75772465574626,
+      "lat": 68.59131225909927,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10020
+    },
+    {
+      "id": "majortom_val_0012818",
+      "lon": 53.127094592297006,
+      "lat": 55.72122144777688,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10021
+    },
+    {
+      "id": "majortom_val_0023058",
+      "lon": 14.393282526147692,
+      "lat": 58.10576977110707,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10022
+    },
+    {
+      "id": "majortom_val_0002095",
+      "lon": 16.782356263557066,
+      "lat": 52.44610681678511,
+      "location": "Poland",
+      "featured": false,
+      "rank": 10023
+    },
+    {
+      "id": "majortom_val_0002156",
+      "lon": 19.4800377622744,
+      "lat": 53.63387655938288,
+      "location": "Poland",
+      "featured": false,
+      "rank": 10024
+    },
+    {
+      "id": "majortom_val_0013031",
+      "lon": 39.29860665146067,
+      "lat": 55.38640814208228,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10025
+    },
+    {
+      "id": "majortom_val_0013128",
+      "lon": 19.41531747935502,
+      "lat": 68.2972304866173,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10026
+    },
+    {
+      "id": "majortom_val_0033613",
+      "lon": 8.796036773418422,
+      "lat": 47.34532213760966,
+      "location": "Switzerland",
+      "featured": false,
+      "rank": 10027
+    },
+    {
+      "id": "majortom_val_0023436",
+      "lon": 19.480842640244973,
+      "lat": 68.2741567429019,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10028
+    },
+    {
+      "id": "majortom_val_0013222",
+      "lon": 30.82706054353794,
+      "lat": 68.54484162317571,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10029
+    },
+    {
+      "id": "majortom_val_0023636",
+      "lon": -8.644949621881159,
+      "lat": 39.24283437857066,
+      "location": "Portugal",
+      "featured": false,
+      "rank": 10030
+    },
+    {
+      "id": "majortom_val_0013619",
+      "lon": 30.029268332286595,
+      "lat": 64.13791109532471,
+      "location": "Finland",
+      "featured": false,
+      "rank": 10031
+    },
+    {
+      "id": "majortom_val_0034518",
+      "lon": 19.519949678626126,
+      "lat": 53.63437675492508,
+      "location": "Poland",
+      "featured": false,
+      "rank": 10032
+    },
+    {
+      "id": "majortom_val_0003030",
+      "lon": 13.282360492410469,
+      "lat": 56.10663833068508,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10033
+    },
+    {
+      "id": "majortom_val_0024305",
+      "lon": 14.305081619462666,
+      "lat": 58.03418009117384,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10034
+    },
+    {
+      "id": "majortom_val_0034747",
+      "lon": 40.673373652172614,
+      "lat": 45.93166642509156,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10035
+    },
+    {
+      "id": "majortom_val_0024796",
+      "lon": 30.82248568046285,
+      "lat": 68.59216227146527,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10036
+    },
+    {
+      "id": "majortom_val_0003439",
+      "lon": 25.444444753646508,
+      "lat": 66.74850967629406,
+      "location": "Finland",
+      "featured": false,
+      "rank": 10037
+    },
+    {
+      "id": "majortom_val_0024814",
+      "lon": 31.011956754293575,
+      "lat": 69.01828114487414,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10038
+    },
+    {
+      "id": "majortom_val_0024842",
+      "lon": 6.418679955592851,
+      "lat": 49.639291491677625,
+      "location": "Luxembourg",
+      "featured": false,
+      "rank": 10039
+    },
+    {
+      "id": "majortom_val_0003518",
+      "lon": 34.96782752956452,
+      "lat": 41.35030309352358,
+      "location": "Turkey",
+      "featured": false,
+      "rank": 10041
+    },
+    {
+      "id": "majortom_val_0014715",
+      "lon": -2.597450777805356,
+      "lat": 40.85965773712079,
+      "location": "Spain",
+      "featured": false,
+      "rank": 10042
+    },
+    {
+      "id": "majortom_val_0014748",
+      "lon": 19.517453119377933,
+      "lat": 53.70554118917595,
+      "location": "Poland",
+      "featured": false,
+      "rank": 10043
+    },
+    {
+      "id": "majortom_val_0014761",
+      "lon": 17.31776449012838,
+      "lat": 51.52410811603478,
+      "location": "Poland",
+      "featured": false,
+      "rank": 10044
+    },
+    {
+      "id": "majortom_val_0003595",
+      "lon": 31.933387036752322,
+      "lat": 62.99861730508465,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10045
+    },
+    {
+      "id": "majortom_val_0014858",
+      "lon": 15.378735558665838,
+      "lat": 63.40394379778062,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10047
+    },
+    {
+      "id": "majortom_val_0003935",
+      "lon": 7.705344000236104,
+      "lat": 47.23738226094254,
+      "location": "Switzerland",
+      "featured": false,
+      "rank": 10049
+    },
+    {
+      "id": "majortom_val_0035724",
+      "lon": 54.175277474762936,
+      "lat": 56.77869616900474,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10050
+    },
+    {
+      "id": "majortom_val_0015268",
+      "lon": 14.63147289494811,
+      "lat": 63.2436091428329,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10051
+    },
+    {
+      "id": "majortom_val_0015330",
+      "lon": 15.32588505293978,
+      "lat": 63.40407407096236,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10052
+    },
+    {
+      "id": "majortom_val_0025684",
+      "lon": 30.76008264710673,
+      "lat": 68.56765301505563,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10053
+    },
+    {
+      "id": "majortom_val_0004447",
+      "lon": 13.51373462947527,
+      "lat": 55.8369940226028,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10054
+    },
+    {
+      "id": "majortom_val_0026265",
+      "lon": 42.42079379949851,
+      "lat": 47.86659958591891,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10055
+    },
+    {
+      "id": "majortom_val_0016054",
+      "lon": 16.907018337790664,
+      "lat": 60.27840878129448,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10056
+    },
+    {
+      "id": "majortom_val_0026347",
+      "lon": 34.35452756305232,
+      "lat": 62.50590708847706,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10057
+    },
+    {
+      "id": "majortom_val_0026375",
+      "lon": 22.34853101174916,
+      "lat": 66.7264541865674,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10058
+    },
+    {
+      "id": "majortom_val_0004678",
+      "lon": -8.085308784578924,
+      "lat": 39.15303823795893,
+      "location": "Portugal",
+      "featured": false,
+      "rank": 10059
+    },
+    {
+      "id": "majortom_val_0016447",
+      "lon": 16.675154759982824,
+      "lat": 58.88938927403621,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10061
+    },
+    {
+      "id": "majortom_val_0037004",
+      "lon": 16.86765276620486,
+      "lat": 53.85768378872121,
+      "location": "Poland",
+      "featured": false,
+      "rank": 10062
+    },
+    {
+      "id": "majortom_val_0004990",
+      "lon": 15.319840849323489,
+      "lat": 59.272477260230986,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10063
+    },
+    {
+      "id": "majortom_val_0026836",
+      "lon": 17.391320664145198,
+      "lat": 51.475145466385165,
+      "location": "Poland",
+      "featured": false,
+      "rank": 10064
+    },
+    {
+      "id": "majortom_val_0037317",
+      "lon": 24.325156407620913,
+      "lat": 45.7084536367675,
+      "location": "Romania",
+      "featured": false,
+      "rank": 10065
+    },
+    {
+      "id": "majortom_val_0017027",
+      "lon": 16.954723105336832,
+      "lat": 60.27771517115324,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10066
+    },
+    {
+      "id": "majortom_val_0037570",
+      "lon": 17.318970107214415,
+      "lat": 51.5478266810522,
+      "location": "Poland",
+      "featured": false,
+      "rank": 10067
+    },
+    {
+      "id": "majortom_val_0027387",
+      "lon": 16.81002390549599,
+      "lat": 58.840141012409624,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10068
+    },
+    {
+      "id": "majortom_val_0037911",
+      "lon": 24.0905207344296,
+      "lat": 41.800408293123034,
+      "location": "Bulgaria",
+      "featured": false,
+      "rank": 10069
+    },
+    {
+      "id": "majortom_val_0005737",
+      "lon": 17.39380572169347,
+      "lat": 51.52258036875094,
+      "location": "Poland",
+      "featured": false,
+      "rank": 10070
+    },
+    {
+      "id": "majortom_val_0038005",
+      "lon": 19.477687756891765,
+      "lat": 68.32149638140982,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10071
+    },
+    {
+      "id": "majortom_val_0017560",
+      "lon": 20.87919192279911,
+      "lat": 39.66827650960553,
+      "location": "Greece",
+      "featured": false,
+      "rank": 10072
+    },
+    {
+      "id": "majortom_val_0005822",
+      "lon": 42.423146808674545,
+      "lat": 47.81914127881115,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10073
+    },
+    {
+      "id": "majortom_val_0005838",
+      "lon": 54.13212917219418,
+      "lat": 56.77771093652102,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10074
+    },
+    {
+      "id": "majortom_val_0028022",
+      "lon": 39.80304075197554,
+      "lat": 46.13494038283886,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10075
+    },
+    {
+      "id": "majortom_val_0006029",
+      "lon": 35.872773445660506,
+      "lat": 32.728066949348054,
+      "location": "Jordan",
+      "featured": false,
+      "rank": 10076
+    },
+    {
+      "id": "majortom_val_0038455",
+      "lon": 14.349353643237157,
+      "lat": 58.0581271497999,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10077
+    },
+    {
+      "id": "majortom_val_0028337",
+      "lon": 21.24634850996764,
+      "lat": 51.997066231955635,
+      "location": "Poland",
+      "featured": false,
+      "rank": 10078
+    },
+    {
+      "id": "majortom_val_0018130",
+      "lon": 3.6769123770432808,
+      "lat": 50.47025645950649,
+      "location": "Belgium",
+      "featured": false,
+      "rank": 10079
+    },
+    {
+      "id": "majortom_val_0028427",
+      "lon": 36.96830537817121,
+      "lat": 49.84378530389764,
+      "location": "Ukraine",
+      "featured": false,
+      "rank": 10080
+    },
+    {
+      "id": "majortom_val_0038749",
+      "lon": 28.162250322785095,
+      "lat": 59.74026080659923,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10081
+    },
+    {
+      "id": "majortom_val_0038862",
+      "lon": 19.54472945081962,
+      "lat": 68.27472763227992,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10082
+    },
+    {
+      "id": "majortom_val_0028789",
+      "lon": 53.08509511323838,
+      "lat": 55.72194179205557,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10083
+    },
+    {
+      "id": "majortom_val_0018853",
+      "lon": 25.43994647578462,
+      "lat": 66.81953127723426,
+      "location": "Finland",
+      "featured": false,
+      "rank": 10084
+    },
+    {
+      "id": "majortom_val_0029218",
+      "lon": 28.16307380121537,
+      "lat": 59.7639620744438,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10085
+    },
+    {
+      "id": "majortom_val_0019011",
+      "lon": 24.359014933798907,
+      "lat": 45.707462072958855,
+      "location": "Romania",
+      "featured": false,
+      "rank": 10086
+    },
+    {
+      "id": "majortom_val_0007131",
+      "lon": 17.156867602425358,
+      "lat": 66.23083213714042,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10087
+    },
+    {
+      "id": "majortom_val_0029766",
+      "lon": 14.994315123245661,
+      "lat": 48.98577501356205,
+      "location": "Czechia",
+      "featured": false,
+      "rank": 10088
+    },
+    {
+      "id": "majortom_val_0019546",
+      "lon": 15.135729257898765,
+      "lat": 63.267039877437675,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10089
+    },
+    {
+      "id": "majortom_val_0007433",
+      "lon": 16.8593112496783,
+      "lat": 60.27908526523315,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10090
+    },
+    {
+      "id": "majortom_val_0040216",
+      "lon": 14.52406566128554,
+      "lat": 58.5729980261664,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10091
+    },
+    {
+      "id": "majortom_val_0007684",
+      "lon": 16.866597129763647,
+      "lat": 53.83396768304649,
+      "location": "Poland",
+      "featured": false,
+      "rank": 10092
+    },
+    {
+      "id": "majortom_val_0040371",
+      "lon": 14.95825132435499,
+      "lat": 48.96201906398765,
+      "location": "Czechia",
+      "featured": false,
+      "rank": 10093
+    },
+    {
+      "id": "majortom_val_0040620",
+      "lon": 20.910002252725334,
+      "lat": 39.64451718429282,
+      "location": "Greece",
+      "featured": false,
+      "rank": 10094
+    },
+    {
+      "id": "majortom_val_0020146",
+      "lon": 28.60936603194448,
+      "lat": 45.978248933855646,
+      "location": "Moldova",
+      "featured": false,
+      "rank": 10095
+    },
+    {
+      "id": "majortom_val_0007911",
+      "lon": 25.489272588294135,
+      "lat": 43.62134977047525,
+      "location": "Bulgaria",
+      "featured": false,
+      "rank": 10096
+    },
+    {
+      "id": "majortom_val_0020206",
+      "lon": 25.323026747675726,
+      "lat": 66.77095539833863,
+      "location": "Finland",
+      "featured": false,
+      "rank": 10097
+    },
+    {
+      "id": "majortom_val_0020270",
+      "lon": 15.378423460574968,
+      "lat": 63.380250881062274,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10098
+    },
+    {
+      "id": "majortom_val_0008057",
+      "lon": 30.692968981279083,
+      "lat": 68.59043735609768,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10099
+    },
+    {
+      "id": "majortom_val_0061488",
+      "lon": 18.326979710839097,
+      "lat": 62.955486264656315,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10100
+    },
+    {
+      "id": "majortom_val_0061577",
+      "lon": 15.325616504426787,
+      "lat": 63.38038102036749,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10101
+    },
+    {
+      "id": "majortom_val_0051376",
+      "lon": 30.84337640602439,
+      "lat": 38.2747158275127,
+      "location": "Turkey",
+      "featured": false,
+      "rank": 10102
+    },
+    {
+      "id": "majortom_val_0051482",
+      "lon": 25.430759147216765,
+      "lat": 54.78292259154525,
+      "location": "Lithuania",
+      "featured": false,
+      "rank": 10103
+    },
+    {
+      "id": "majortom_val_0061725",
+      "lon": 15.325348453658814,
+      "lat": 63.35668788989778,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10104
+    },
+    {
+      "id": "majortom_val_0061758",
+      "lon": 1.9053587141562507,
+      "lat": 42.585508347596026,
+      "location": "France",
+      "featured": false,
+      "rank": 10105
+    },
+    {
+      "id": "majortom_val_0051749",
+      "lon": 36.48346494285359,
+      "lat": 37.40112779173875,
+      "location": "Turkey",
+      "featured": false,
+      "rank": 10106
+    },
+    {
+      "id": "majortom_val_0008729",
+      "lon": 28.048810541785247,
+      "lat": 44.786987811765194,
+      "location": "Romania",
+      "featured": false,
+      "rank": 10108
+    },
+    {
+      "id": "majortom_val_0062284",
+      "lon": 17.33063363124147,
+      "lat": 66.20462035826587,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10109
+    },
+    {
+      "id": "majortom_val_0052047",
+      "lon": 16.828569726197536,
+      "lat": 53.88201813094281,
+      "location": "Poland",
+      "featured": false,
+      "rank": 10110
+    },
+    {
+      "id": "majortom_val_0062358",
+      "lon": 20.879150470767776,
+      "lat": 39.69206365142578,
+      "location": "Greece",
+      "featured": false,
+      "rank": 10111
+    },
+    {
+      "id": "majortom_val_0062373",
+      "lon": 46.468448537841844,
+      "lat": 51.79322980206743,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10112
+    },
+    {
+      "id": "majortom_val_0062404",
+      "lon": 0.6938622538236663,
+      "lat": 46.202251879475,
+      "location": "France",
+      "featured": false,
+      "rank": 10113
+    },
+    {
+      "id": "majortom_val_0062418",
+      "lon": 25.423854937211026,
+      "lat": 43.62046635606002,
+      "location": "Bulgaria",
+      "featured": false,
+      "rank": 10114
+    },
+    {
+      "id": "majortom_val_0009151",
+      "lon": 31.88127955590499,
+      "lat": 62.99821471237773,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10115
+    },
+    {
+      "id": "majortom_val_0009205",
+      "lon": 13.512829293319639,
+      "lat": 55.860706871147435,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10116
+    },
+    {
+      "id": "majortom_val_0062845",
+      "lon": 16.318757620454477,
+      "lat": 40.15846552702509,
+      "location": "Italy",
+      "featured": false,
+      "rank": 10117
+    },
+    {
+      "id": "majortom_val_0073119",
+      "lon": 25.44294847759198,
+      "lat": 66.77218363169656,
+      "location": "Finland",
+      "featured": false,
+      "rank": 10118
+    },
+    {
+      "id": "majortom_val_0009440",
+      "lon": 4.872284816976528,
+      "lat": 50.379099396363856,
+      "location": "Belgium",
+      "featured": false,
+      "rank": 10119
+    },
+    {
+      "id": "majortom_val_0073306",
+      "lon": 46.428681623853095,
+      "lat": 51.7462422262566,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10120
+    },
+    {
+      "id": "majortom_val_0073424",
+      "lon": 25.456563390993143,
+      "lat": 43.620912740748096,
+      "location": "Bulgaria",
+      "featured": false,
+      "rank": 10121
+    },
+    {
+      "id": "majortom_val_0053074",
+      "lon": 14.478677036747007,
+      "lat": 58.57282195283091,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10122
+    },
+    {
+      "id": "majortom_val_0053075",
+      "lon": 53.12580659355106,
+      "lat": 55.697516413190655,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10123
+    },
+    {
+      "id": "majortom_val_0053076",
+      "lon": 22.892648088837632,
+      "lat": 41.66681704765993,
+      "location": "North Macedonia",
+      "featured": false,
+      "rank": 10124
+    },
+    {
+      "id": "majortom_val_0053214",
+      "lon": 22.958534355898518,
+      "lat": 60.189251477766874,
+      "location": "Finland",
+      "featured": false,
+      "rank": 10126
+    },
+    {
+      "id": "majortom_val_0009786",
+      "lon": 34.95102189393965,
+      "lat": 62.97162550498074,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10127
+    },
+    {
+      "id": "majortom_val_0063516",
+      "lon": 10.93495826118592,
+      "lat": 50.28865068006924,
+      "location": "Germany",
+      "featured": false,
+      "rank": 10128
+    },
+    {
+      "id": "majortom_val_0053295",
+      "lon": 33.541079201288795,
+      "lat": 65.87131214681294,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10129
+    },
+    {
+      "id": "majortom_val_0073813",
+      "lon": 31.62654881924229,
+      "lat": 66.41098135175142,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10130
+    },
+    {
+      "id": "majortom_val_0053460",
+      "lon": -4.0271643816495795,
+      "lat": 40.902053256472016,
+      "location": "Spain",
+      "featured": false,
+      "rank": 10131
+    },
+    {
+      "id": "majortom_val_0010008",
+      "lon": 25.32141196906942,
+      "lat": 66.79462786871416,
+      "location": "Finland",
+      "featured": false,
+      "rank": 10132
+    },
+    {
+      "id": "majortom_val_0010027",
+      "lon": 19.60572988961969,
+      "lat": 68.32261632448602,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10133
+    },
+    {
+      "id": "majortom_val_0053545",
+      "lon": 33.426117266860466,
+      "lat": 65.91904613046242,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10134
+    },
+    {
+      "id": "majortom_val_0074451",
+      "lon": 15.27258446995177,
+      "lat": 63.35679839345187,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10135
+    },
+    {
+      "id": "majortom_val_0064536",
+      "lon": 31.008568525178,
+      "lat": 59.78805826677924,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10136
+    },
+    {
+      "id": "majortom_val_0054349",
+      "lon": 40.67480440669937,
+      "lat": 45.97916830019314,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10137
+    },
+    {
+      "id": "majortom_val_0054484",
+      "lon": 36.45286056754171,
+      "lat": 37.42426227449286,
+      "location": "Turkey",
+      "featured": false,
+      "rank": 10138
+    },
+    {
+      "id": "majortom_val_0064750",
+      "lon": 14.977944685007992,
+      "lat": 63.24340895229833,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10139
+    },
+    {
+      "id": "majortom_val_0041544",
+      "lon": 25.37986848996301,
+      "lat": 66.81892717017777,
+      "location": "Finland",
+      "featured": false,
+      "rank": 10140
+    },
+    {
+      "id": "majortom_val_0054626",
+      "lon": 46.50671493721333,
+      "lat": 51.7927455889945,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10141
+    },
+    {
+      "id": "majortom_val_0075125",
+      "lon": 21.246218321518654,
+      "lat": 51.97333026135524,
+      "location": "Poland",
+      "featured": false,
+      "rank": 10142
+    },
+    {
+      "id": "majortom_val_0042051",
+      "lon": 14.97789033867818,
+      "lat": 63.31449038592242,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10143
+    },
+    {
+      "id": "majortom_val_0065490",
+      "lon": 38.108703765850926,
+      "lat": 45.28001157444007,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10145
+    },
+    {
+      "id": "majortom_val_0075807",
+      "lon": 17.39256234344241,
+      "lat": 51.498862976530326,
+      "location": "Poland",
+      "featured": false,
+      "rank": 10146
+    },
+    {
+      "id": "majortom_val_0055359",
+      "lon": 28.60867818919426,
+      "lat": 45.954497267820585,
+      "location": "Moldova",
+      "featured": false,
+      "rank": 10147
+    },
+    {
+      "id": "majortom_val_0055401",
+      "lon": 46.54416984104321,
+      "lat": 51.768520538541836,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10148
+    },
+    {
+      "id": "majortom_val_0055466",
+      "lon": 17.35701129366704,
+      "lat": 51.547068323944316,
+      "location": "Poland",
+      "featured": false,
+      "rank": 10149
+    },
+    {
+      "id": "majortom_val_0065711",
+      "lon": 46.54579177176213,
+      "lat": 51.815977209004636,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10150
+    },
+    {
+      "id": "majortom_val_0055609",
+      "lon": 30.887251901626907,
+      "lat": 68.59298738965583,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10151
+    },
+    {
+      "id": "majortom_val_0042476",
+      "lon": 15.030552614482993,
+      "lat": 63.290795091358895,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10153
+    },
+    {
+      "id": "majortom_val_0076285",
+      "lon": 14.523421171804344,
+      "lat": 58.620417179891874,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10154
+    },
+    {
+      "id": "majortom_val_0066116",
+      "lon": 17.00532709187179,
+      "lat": 60.32438376872119,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10155
+    },
+    {
+      "id": "majortom_val_0056141",
+      "lon": 33.54157850170282,
+      "lat": 65.8949964758301,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10156
+    },
+    {
+      "id": "majortom_val_0056208",
+      "lon": 14.349784386310994,
+      "lat": 58.03441622767279,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10157
+    },
+    {
+      "id": "majortom_val_0056361",
+      "lon": 46.42943083553221,
+      "lat": 51.769971947601995,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10158
+    },
+    {
+      "id": "majortom_val_0066831",
+      "lon": 8.760978821219187,
+      "lat": 47.369009657478564,
+      "location": "Switzerland",
+      "featured": false,
+      "rank": 10159
+    },
+    {
+      "id": "majortom_val_0066851",
+      "lon": 54.21667321265331,
+      "lat": 56.80335571565228,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10160
+    },
+    {
+      "id": "majortom_val_0077133",
+      "lon": 14.630564808564957,
+      "lat": 63.31468910535978,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10161
+    },
+    {
+      "id": "majortom_val_0043383",
+      "lon": 17.21552194464157,
+      "lat": 66.23000528976719,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10162
+    },
+    {
+      "id": "majortom_val_0077330",
+      "lon": 17.00242549447078,
+      "lat": 60.27700443648323,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10163
+    },
+    {
+      "id": "majortom_val_0056899",
+      "lon": 16.76793046432955,
+      "lat": 58.91186803682631,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10164
+    },
+    {
+      "id": "majortom_val_0057095",
+      "lon": 15.366157558986773,
+      "lat": 59.27235525998159,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10165
+    },
+    {
+      "id": "majortom_val_0067386",
+      "lon": 18.304741516372914,
+      "lat": 54.22020505402709,
+      "location": "Poland",
+      "featured": false,
+      "rank": 10166
+    },
+    {
+      "id": "majortom_val_0043779",
+      "lon": 59.6666846930248,
+      "lat": 56.03604566660657,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10167
+    },
+    {
+      "id": "majortom_val_0077955",
+      "lon": 12.04837219239474,
+      "lat": 60.057603719691855,
+      "location": "Norway",
+      "featured": false,
+      "rank": 10168
+    },
+    {
+      "id": "majortom_val_0077979",
+      "lon": 8.761086073726116,
+      "lat": 47.34525461589397,
+      "location": "Switzerland",
+      "featured": false,
+      "rank": 10169
+    },
+    {
+      "id": "majortom_val_0057660",
+      "lon": 23.99442587949551,
+      "lat": 60.36874565392533,
+      "location": "Finland",
+      "featured": false,
+      "rank": 10170
+    },
+    {
+      "id": "majortom_val_0068108",
+      "lon": 16.746308117118698,
+      "lat": 53.83577933242782,
+      "location": "Poland",
+      "featured": false,
+      "rank": 10171
+    },
+    {
+      "id": "majortom_val_0068184",
+      "lon": 15.41218746321844,
+      "lat": 59.248509453891025,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10172
+    },
+    {
+      "id": "majortom_val_0078482",
+      "lon": 34.998639799723136,
+      "lat": 41.32599344617703,
+      "location": "Turkey",
+      "featured": false,
+      "rank": 10173
+    },
+    {
+      "id": "majortom_val_0068330",
+      "lon": 0.6928677686527717,
+      "lat": 46.225992613054494,
+      "location": "France",
+      "featured": false,
+      "rank": 10174
+    },
+    {
+      "id": "majortom_val_0044524",
+      "lon": 30.813216063376544,
+      "lat": 38.27415733889809,
+      "location": "Turkey",
+      "featured": false,
+      "rank": 10175
+    },
+    {
+      "id": "majortom_val_0068638",
+      "lon": 30.87534352998224,
+      "lat": 69.06401609757073,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10176
+    },
+    {
+      "id": "majortom_val_0068693",
+      "lon": 59.624360411656255,
+      "lat": 56.03695372190907,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10177
+    },
+    {
+      "id": "majortom_val_0044776",
+      "lon": 14.735939113146754,
+      "lat": 63.3149231725437,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10178
+    },
+    {
+      "id": "majortom_val_0044786",
+      "lon": 29.523772366894427,
+      "lat": 52.15040821338029,
+      "location": "Belarus",
+      "featured": false,
+      "rank": 10179
+    },
+    {
+      "id": "majortom_val_0044795",
+      "lon": 30.87353757749935,
+      "lat": 38.27526657011655,
+      "location": "Turkey",
+      "featured": false,
+      "rank": 10180
+    },
+    {
+      "id": "majortom_val_0079258",
+      "lon": 19.543219980006572,
+      "lat": 68.29839817850923,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10181
+    },
+    {
+      "id": "majortom_val_0079293",
+      "lon": 30.6953949251586,
+      "lat": 68.56677917069071,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10182
+    },
+    {
+      "id": "majortom_val_0058949",
+      "lon": 17.278443753723796,
+      "lat": 66.27648737511397,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10183
+    },
+    {
+      "id": "majortom_val_0069274",
+      "lon": 13.555873390732323,
+      "lat": 55.83749589847932,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10184
+    },
+    {
+      "id": "majortom_val_0079544",
+      "lon": -19.941578058962683,
+      "lat": 65.84804308946251,
+      "location": "Iceland",
+      "featured": false,
+      "rank": 10185
+    },
+    {
+      "id": "majortom_val_0069405",
+      "lon": 14.304621268136094,
+      "lat": 58.05789079676241,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10186
+    },
+    {
+      "id": "majortom_val_0045326",
+      "lon": 30.82477570165943,
+      "lat": 68.5685019988238,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10187
+    },
+    {
+      "id": "majortom_val_0069721",
+      "lon": 19.541707126262814,
+      "lat": 68.32206864099578,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10188
+    },
+    {
+      "id": "majortom_val_0045505",
+      "lon": -8.675651369802502,
+      "lat": 39.219134961731925,
+      "location": "Portugal",
+      "featured": false,
+      "rank": 10189
+    },
+    {
+      "id": "majortom_val_0080002",
+      "lon": 28.015026874550067,
+      "lat": 44.76352710716774,
+      "location": "Romania",
+      "featured": false,
+      "rank": 10190
+    },
+    {
+      "id": "majortom_val_0080043",
+      "lon": 17.217600700084343,
+      "lat": 66.25367184135776,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10191
+    },
+    {
+      "id": "majortom_val_0059610",
+      "lon": 15.030527560824702,
+      "lat": 63.26710128176854,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10192
+    },
+    {
+      "id": "majortom_val_0059689",
+      "lon": -8.675760769826326,
+      "lat": 39.195346208931575,
+      "location": "Portugal",
+      "featured": false,
+      "rank": 10193
+    },
+    {
+      "id": "majortom_val_0080205",
+      "lon": 14.577878459011917,
+      "lat": 63.3145428719596,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10194
+    },
+    {
+      "id": "majortom_val_0045813",
+      "lon": -2.2634141076879284,
+      "lat": 47.27846444114987,
+      "location": "France",
+      "featured": false,
+      "rank": 10195
+    },
+    {
+      "id": "majortom_val_0059910",
+      "lon": 14.68325171998395,
+      "lat": 63.314815872342415,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10196
+    },
+    {
+      "id": "majortom_val_0059952",
+      "lon": -3.039526385019427,
+      "lat": 54.53087453952289,
+      "location": "United Kingdom",
+      "featured": false,
+      "rank": 10197
+    },
+    {
+      "id": "majortom_val_0070283",
+      "lon": 46.54336054692252,
+      "lat": 51.744792045261846,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10198
+    },
+    {
+      "id": "majortom_val_0070385",
+      "lon": 20.90997139842914,
+      "lat": 39.668304447314256,
+      "location": "Greece",
+      "featured": false,
+      "rank": 10199
+    },
+    {
+      "id": "majortom_val_0060156",
+      "lon": 15.707410444536517,
+      "lat": 53.29656941370921,
+      "location": "Poland",
+      "featured": false,
+      "rank": 10200
+    },
+    {
+      "id": "majortom_val_0046072",
+      "lon": 53.16909214643585,
+      "lat": 55.72048675173487,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10201
+    },
+    {
+      "id": "majortom_val_0070481",
+      "lon": 53.08762600339064,
+      "lat": 55.769352800435094,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10202
+    },
+    {
+      "id": "majortom_val_0046144",
+      "lon": 24.14008522719337,
+      "lat": 60.38910779216945,
+      "location": "Finland",
+      "featured": false,
+      "rank": 10203
+    },
+    {
+      "id": "majortom_val_0046286",
+      "lon": 36.45447035508087,
+      "lat": 37.37671642980665,
+      "location": "Turkey",
+      "featured": false,
+      "rank": 10204
+    },
+    {
+      "id": "majortom_val_0060458",
+      "lon": 14.089560039401366,
+      "lat": 64.61487825137839,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10205
+    },
+    {
+      "id": "majortom_val_0071003",
+      "lon": -2.597594667807562,
+      "lat": 40.83587594422723,
+      "location": "Spain",
+      "featured": false,
+      "rank": 10206
+    },
+    {
+      "id": "majortom_val_0061017",
+      "lon": 21.20789566261384,
+      "lat": 51.99714037335168,
+      "location": "Poland",
+      "featured": false,
+      "rank": 10207
+    },
+    {
+      "id": "majortom_val_0071324",
+      "lon": 34.898981404485475,
+      "lat": 62.97233451673745,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10208
+    },
+    {
+      "id": "majortom_val_0061270",
+      "lon": 24.092260955606704,
+      "lat": 60.39022807213047,
+      "location": "Finland",
+      "featured": false,
+      "rank": 10209
+    },
+    {
+      "id": "majortom_val_0071543",
+      "lon": 33.483651689083395,
+      "lat": 65.89518990329734,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10210
+    },
+    {
+      "id": "majortom_val_0047205",
+      "lon": 16.956138205065134,
+      "lat": 60.30140556989697,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10211
+    },
+    {
+      "id": "majortom_val_0047758",
+      "lon": 34.4535471275629,
+      "lat": 62.43380899640826,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10212
+    },
+    {
+      "id": "majortom_val_0048158",
+      "lon": 14.032693682238156,
+      "lat": 64.66189980926835,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10213
+    },
+    {
+      "id": "majortom_val_0048379",
+      "lon": 56.22323609462947,
+      "lat": 54.980317659429836,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10214
+    },
+    {
+      "id": "majortom_val_0049128",
+      "lon": 26.57183788421303,
+      "lat": 57.656267720006824,
+      "location": "Estonia",
+      "featured": false,
+      "rank": 10216
+    },
+    {
+      "id": "majortom_val_0049718",
+      "lon": 39.76820594462673,
+      "lat": 46.087658758228976,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10217
+    },
+    {
+      "id": "majortom_val_0049840",
+      "lon": 25.4559550061606,
+      "lat": 43.64467489606689,
+      "location": "Romania",
+      "featured": false,
+      "rank": 10218
+    },
+    {
+      "id": "majortom_val_0050142",
+      "lon": 15.135618072351484,
+      "lat": 63.243346051238916,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10219
+    },
+    {
+      "id": "majortom_val_0050151",
+      "lon": 14.736588194068068,
+      "lat": 63.24384249124678,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10220
+    },
+    {
+      "id": "majortom_val_0050339",
+      "lon": 19.47918437524359,
+      "lat": 53.657597709607785,
+      "location": "Poland",
+      "featured": false,
+      "rank": 10221
+    },
+    {
+      "id": "majortom_val_0050656",
+      "lon": 14.09035154752326,
+      "lat": 64.59119178977146,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10222
+    },
+    {
+      "id": "majortom_val_0050787",
+      "lon": 31.880372113001563,
+      "lat": 63.02190490869187,
+      "location": "Russia",
+      "featured": false,
+      "rank": 10223
+    },
+    {
+      "id": "majortom_val_0050829",
+      "lon": -2.9579105769606207,
+      "lat": 54.55459962890578,
+      "location": "United Kingdom",
+      "featured": false,
+      "rank": 10224
+    },
+    {
+      "id": "majortom_val_0050929",
+      "lon": 19.607176378811097,
+      "lat": 68.29894520560553,
+      "location": "Sweden",
+      "featured": false,
+      "rank": 10225
+    }
+  ],
+  "locations": {
+    "Sweden": 64,
+    "Russia": 60,
+    "Poland": 22,
+    "Finland": 11,
+    "Turkey": 9,
+    "Romania": 7,
+    "France": 6,
+    "Bulgaria": 5,
+    "Greece": 5,
+    "Portugal": 5,
+    "Switzerland": 5,
+    "Spain": 3,
+    "Belgium": 2,
+    "Czechia": 2,
+    "Estonia": 2,
+    "Moldova": 2,
+    "North Macedonia": 2,
+    "Ukraine": 2,
+    "United Kingdom": 2,
+    "Austria": 1,
+    "Belarus": 1,
+    "Germany": 1,
+    "Hungary": 1,
+    "Iceland": 1,
+    "Italy": 1,
+    "Jordan": 1,
+    "Lithuania": 1,
+    "Luxembourg": 1,
+    "Norway": 1
+  },
+  "bbox": {
+    "west": -19.941578058962683,
+    "south": 32.728066949348054,
+    "east": 59.6666846930248,
+    "north": 69.06401609757073
+  }
+}
