@@ -105,6 +105,42 @@ function countrySamples() {
   return state.samples.filter((sample) => sample.location === state.country);
 }
 
+function sampleBounds(samples) {
+  const valid = samples.filter((sample) => Number.isFinite(sample.lon) && Number.isFinite(sample.lat));
+  if (!valid.length || !window.maplibregl) return null;
+
+  const bounds = new maplibregl.LngLatBounds(
+    [valid[0].lon, valid[0].lat],
+    [valid[0].lon, valid[0].lat],
+  );
+  valid.slice(1).forEach((sample) => bounds.extend([sample.lon, sample.lat]));
+  return bounds;
+}
+
+function fitSamples(samples, options = {}) {
+  if (!state.map || !samples.length) return;
+
+  if (samples.length === 1) {
+    state.map[options.animate ? "flyTo" : "jumpTo"]({
+      center: [samples[0].lon, samples[0].lat],
+      zoom: 6,
+      duration: options.animate ? 900 : 0,
+      essential: true,
+    });
+    return;
+  }
+
+  const bounds = sampleBounds(samples);
+  if (!bounds) return;
+
+  state.map.fitBounds(bounds, {
+    padding: options.padding || { top: 70, right: 70, bottom: 70, left: 70 },
+    maxZoom: options.maxZoom || 5.8,
+    duration: options.animate ? 900 : 0,
+    essential: true,
+  });
+}
+
 function populateStaticControls(locations) {
   el.countrySelect.innerHTML = [
     `<option value="all">All regions (${state.samples.length})</option>`,
@@ -124,12 +160,12 @@ function populateStaticControls(locations) {
 function populateSampleSelect() {
   const samples = countrySamples();
   el.sampleSelect.innerHTML = samples.map((sample) => {
-    const label = sample.featured ? `${sample.location} - ${sample.id} *` : `${sample.location} - ${sample.id}`;
+    const label = `${sample.location} - ${sample.id}`;
     return `<option value="${sample.id}">${label}</option>`;
   }).join("");
 
   if (!samples.some((sample) => sample.id === state.activeSample?.id)) {
-    setActiveSample(samples[0] || state.samples[0], { fly: true });
+    setActiveSample(samples[0] || state.samples[0]);
   } else if (state.activeSample) {
     el.sampleSelect.value = state.activeSample.id;
   }
@@ -154,9 +190,11 @@ function updateMeta() {
 function updateMarkerStates() {
   state.markers.forEach(({ marker, node, sample }) => {
     const visible = state.country === "all" || sample.location === state.country;
-    node.style.display = visible ? "block" : "none";
+    const markerElement = marker.getElement();
+    markerElement.style.display = visible ? "block" : "none";
+    markerElement.style.zIndex = state.activeSample?.id === sample.id ? "10" : "1";
     node.classList.toggle("active", state.activeSample?.id === sample.id);
-    if (marker.getElement) marker.getElement().setAttribute("aria-label", `${sample.location} ${sample.id}`);
+    markerElement.setAttribute("aria-label", `${sample.location} ${sample.id}`);
   });
 }
 
@@ -218,7 +256,7 @@ function renderMarkers() {
     node.className = "map-marker";
     node.title = `${sample.location} ${sample.id}`;
     node.addEventListener("click", () => {
-      setActiveSample(sample, { fly: true, updateCountry: true });
+      setActiveSample(sample, { fly: true });
     });
 
     const marker = new maplibregl.Marker({ element: node, anchor: "center" })
@@ -229,9 +267,7 @@ function renderMarkers() {
   });
 
   updateMarkerStates();
-  if (state.activeSample) {
-    state.map.jumpTo({ center: [state.activeSample.lon, state.activeSample.lat], zoom: 5.4 });
-  }
+  fitSamples(state.samples);
 }
 
 function bindEvents() {
@@ -239,6 +275,7 @@ function bindEvents() {
     state.country = el.countrySelect.value;
     populateSampleSelect();
     updateMarkerStates();
+    fitSamples(countrySamples(), { animate: true });
   });
 
   el.sampleSelect.addEventListener("change", () => {

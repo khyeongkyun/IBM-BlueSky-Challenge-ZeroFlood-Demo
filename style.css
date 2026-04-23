@@ -517,13 +517,13 @@ h2 {
 }
 
 .map-marker {
-  width: 15px;
-  height: 15px;
-  border: 2px solid #fff;
+  width: 18px;
+  height: 18px;
+  border: 3px solid #fff;
   border-radius: 50%;
   padding: 0;
   background: #f43f5e;
-  box-shadow: 0 0 0 4px rgba(244, 63, 94, 0.22), 0 8px 18px rgba(16, 32, 51, 0.22);
+  box-shadow: 0 0 0 5px rgba(244, 63, 94, 0.24), 0 8px 18px rgba(16, 32, 51, 0.24);
   appearance: none;
   cursor: pointer;
   transition: transform 160ms ease, box-shadow 160ms ease;
@@ -531,8 +531,8 @@ h2 {
 
 .map-marker:hover,
 .map-marker.active {
-  transform: scale(1.38);
-  box-shadow: 0 0 0 7px rgba(244, 63, 94, 0.24), 0 12px 26px rgba(16, 32, 51, 0.3);
+  transform: scale(1.45);
+  box-shadow: 0 0 0 8px rgba(244, 63, 94, 0.26), 0 12px 26px rgba(16, 32, 51, 0.32);
 }
 
 .map-fallback {
