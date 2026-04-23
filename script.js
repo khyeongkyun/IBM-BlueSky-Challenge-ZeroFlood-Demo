@@ -62,7 +62,6 @@ const el = {
   overlaySlider: document.getElementById("overlay-slider"),
   baseLabel: document.getElementById("base-label"),
   overlayLabel: document.getElementById("overlay-label"),
-  featuredRow: document.getElementById("featured-row"),
   mapFallback: document.getElementById("map-fallback"),
   copyCitation: document.getElementById("copy-citation"),
   bibtex: document.getElementById("bibtex"),
@@ -134,20 +133,6 @@ function populateSampleSelect() {
   } else if (state.activeSample) {
     el.sampleSelect.value = state.activeSample.id;
   }
-}
-
-function renderFeaturedButtons() {
-  const featured = state.samples.filter((sample) => sample.featured).slice(0, 10);
-  el.featuredRow.innerHTML = featured.map((sample) => (
-    `<button type="button" data-sample="${sample.id}">${sample.location}</button>`
-  )).join("");
-
-  el.featuredRow.querySelectorAll("button").forEach((button) => {
-    button.addEventListener("click", () => {
-      const sample = state.samples.find((item) => item.id === button.dataset.sample);
-      if (sample) setActiveSample(sample, { fly: true, updateCountry: true });
-    });
-  });
 }
 
 function updateImages() {
@@ -305,7 +290,6 @@ async function init() {
 
   populateStaticControls(data.locations || {});
   bindEvents();
-  renderFeaturedButtons();
 
   const initial = state.samples.find((sample) => sample.featured) || state.samples[0];
   setActiveSample(initial);

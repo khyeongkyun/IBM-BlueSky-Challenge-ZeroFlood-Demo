@@ -672,30 +672,6 @@ input[type="range"] {
   accent-color: var(--blue);
 }
 
-.featured-row {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-top: 16px;
-}
-
-.featured-row button {
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 8px 11px;
-  color: var(--ink-soft);
-  background: #fff;
-  font: inherit;
-  font-size: 0.75rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.featured-row button:hover {
-  border-color: var(--blue);
-  color: var(--blue);
-}
-
 .results-grid {
   display: grid;
   gap: 18px;
