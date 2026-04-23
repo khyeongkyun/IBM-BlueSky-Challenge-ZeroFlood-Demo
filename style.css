@@ -322,6 +322,10 @@ h2 {
   align-items: start;
 }
 
+.method-layout {
+  grid-template-columns: 1fr;
+}
+
 .paper-figure {
   overflow: hidden;
   margin: 0;
@@ -330,6 +334,17 @@ h2 {
 .paper-figure img {
   width: 100%;
   background: #fff;
+}
+
+.framework-figure {
+  max-width: 1180px;
+  justify-self: center;
+}
+
+.framework-figure img {
+  display: block;
+  padding: clamp(12px, 2.4vw, 26px);
+  box-sizing: border-box;
 }
 
 .paper-figure figcaption {
@@ -346,6 +361,7 @@ h2 {
 
 .method-steps {
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
 }
 
@@ -719,6 +735,10 @@ tr.best td {
 
   .map-card {
     min-height: 560px;
+  }
+
+  .method-steps {
+    grid-template-columns: 1fr;
   }
 
   .hero-stats,
