@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="ZeroFlood paper page and interactive demo for flood hazard mapping from single-modality SAR using geo-foundation models."
+      content="Round 1-winning ZeroFlood paper page and Grand Final demo for flood hazard mapping from single-modality SAR using geo-foundation models."
     >
-    <title>ZeroFlood | Flood Hazard Mapping from Single-Modality SAR</title>
+    <title>ZeroFlood | TerraMind Blue-Sky Challenge Grand Finalist</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -15,18 +15,18 @@
       rel="stylesheet"
     >
     <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
-    <link rel="stylesheet" href="style.css?v=europe-1">
+    <link rel="stylesheet" href="style.css?v=finals-1">
   </head>
   <body>
     <div class="ambient-field" aria-hidden="true"></div>
     <nav class="nav" aria-label="Primary navigation">
       <a class="nav-logo" href="#overview">ZeroFlood</a>
       <div class="nav-links">
-        <a href="#abstract">Abstract</a>
-        <a href="#method">Method</a>
+        <a href="#abstract">Paper</a>
+        <a href="#method">Pipeline</a>
         <a href="#dataset">Dataset</a>
-        <a href="#demo">Demo</a>
-        <a href="#results">Results</a>
+        <a href="#demo">Finals Demo</a>
+        <a href="#results">Evidence</a>
         <a href="#citation">Citation</a>
       </div>
     </nav>
@@ -39,18 +39,25 @@
           <span class="orb orb-c"></span>
         </div>
         <div class="hero-shell">
-          <p class="eyebrow">EUSAR 2026 paper companion</p>
-          <h1>ZeroFlood: Flood Hazard Mapping from Single-Modality SAR Using Geo-Foundation Models</h1>
+          <p class="eyebrow">Round 1 winner · TerraMind Blue-Sky Challenge Grand Finalist</p>
+          <h1>ZeroFlood: Finals-Ready Flood Hazard Mapping with Geo-Foundation Models</h1>
           <p class="hero-subtitle">
-            A paper-style project page and embedded demo for predicting flood hazard maps with minimal
-            Earth-observation inputs in data-scarce regions.
+            A Round 1-winning TerraMind Blue-Sky Challenge prototype, now developed into an
+            EUSAR paper and interactive Grand Final demo for the 2nd ESA-NASA Workshop on AI
+            Foundation Model for Earth Observation.
           </p>
+          <div class="finalist-badges" aria-label="ZeroFlood challenge status">
+            <span>Round 1 Winner</span>
+            <span>Grand Finalist</span>
+            <span>EUSAR Paper</span>
+            <span>Live Demo</span>
+          </div>
           <div class="hero-radar" aria-hidden="true">
-            <span>EO inputs</span>
+            <span>Minimal EO input</span>
             <i></i>
-            <span>GeoFM reasoning</span>
+            <span>TerraMind + TiM</span>
             <i></i>
-            <span>Flood hazard map</span>
+            <span>Finals demo</span>
           </div>
 
           <p class="authors">
@@ -75,6 +82,14 @@
               <span class="resource-icon hf-icon" aria-hidden="true">HF</span>
               <span>Hugging Face</span>
             </a>
+            <a class="button resource-button" href="https://huggingface.co/spaces/ibm-esa-geospatial/challenge" target="_blank" rel="noreferrer" aria-label="Open the TerraMind Blue-Sky Challenge page">
+              <span class="resource-icon challenge-icon" aria-hidden="true">1</span>
+              <span>Challenge</span>
+            </a>
+            <a class="button resource-button" href="https://science.data.nasa.gov/features-events/second-esa-nasa-workshop-ai-foundation-model-earth-observation" target="_blank" rel="noreferrer" aria-label="Open the 2nd ESA-NASA Workshop page">
+              <span class="resource-icon workshop-icon" aria-hidden="true">FM</span>
+              <span>Workshop</span>
+            </a>
             <a class="button resource-button" href="paper.pdf" target="_blank" rel="noreferrer" aria-label="Open the local ZeroFlood paper PDF">
               <span class="resource-icon pdf-icon" aria-hidden="true">PDF</span>
               <span>PDF</span>
@@ -83,12 +98,12 @@
 
           <div class="hero-stats" aria-label="Project highlights">
             <div>
-              <strong data-count="226">226</strong>
-              <span>interactive test samples</span>
+              <strong>Round 1</strong>
+              <span>winner advancing to finals</span>
             </div>
             <div>
-              <strong data-count="29">29</strong>
-              <span>mapped regions/countries</span>
+              <strong data-count="225">225</strong>
+              <span>European demo pins</span>
             </div>
             <div>
               <strong data-count="89.12" data-decimals="2">89.12</strong>
@@ -100,19 +115,19 @@
 
       <section class="alt" id="tldr">
         <div class="section-inner wide">
-          <p class="section-kicker">TL;DR</p>
+          <p class="section-kicker">Finalist narrative</p>
           <div class="tldr-grid">
             <article class="tldr-card">
               <span>1</span>
-              <p>ZeroFlood predicts flood-prone regions from minimal EO inputs, focusing on single-modality SAR for data-scarce settings.</p>
+              <p><strong>Challenge signal:</strong> ZeroFlood is a Round 1 winner selected to advance to the TerraMind Blue-Sky Challenge Grand Final.</p>
             </article>
             <article class="tldr-card">
               <span>2</span>
-              <p>TerraMind supplies reusable geospatial representations, while Thinking-in-Modality generates auxiliary cues such as LULC and DEM.</p>
+              <p><strong>Scientific upgrade:</strong> the winning prototype becomes an EUSAR paper on flood hazard mapping from minimal EO inputs.</p>
             </article>
             <article class="tldr-card">
               <span>3</span>
-              <p>The embedded explorer lets you choose a mapped region, switch basemaps, compare EO modalities, and overlay multiple model predictions.</p>
+              <p><strong>Finals proof:</strong> the live explorer lets judges inspect real European samples, basemaps, modalities, and model predictions.</p>
             </article>
           </div>
         </div>
@@ -120,20 +135,19 @@
 
       <section id="abstract">
         <div class="section-inner">
-          <p class="section-kicker">Abstract</p>
-          <h2>Flood hazard mapping with minimal resources</h2>
+          <p class="section-kicker">Paper direction</p>
+          <h2>From Round 1 winner to EUSAR paper</h2>
           <div class="prose">
             <p>
-              Flood hazard mapping is essential for disaster prevention but remains challenging in data-scarce regions,
-              where traditional hydrodynamic models require extensive geophysical inputs. ZeroFlood leverages
-              geospatial foundation models to predict flood hazard maps from single-modality Earth-observation data,
-              specifically SAR imagery.
+              ZeroFlood began as a Round 1-winning TerraMind Blue-Sky Challenge demo and is now a
+              paper-grade study of flood hazard mapping with geospatial foundation models. The core motivation is
+              practical: flood hazard mapping is essential for disaster prevention but remains difficult in
+              data-scarce regions where traditional hydrodynamic models require extensive geophysical inputs.
             </p>
             <p>
-              We construct a dataset that pairs EO data with flood hazard simulations across the European continent and
-              evaluate recent GeoFMs for flood hazard segmentation. TerraMind reaches an F1-score of 88.36%, exceeding
-              supervised baselines by more than 3 percentage points, and Thinking-in-Modality improves performance
-              further by compensating for missing spatial information such as LULC and DEM.
+              The EUSAR paper extends the winning idea into a systematic evaluation: pair EO data with flood hazard
+              simulations across Europe, test recent GeoFMs for flood segmentation, and use TerraMind's
+              Thinking-in-Modality to compensate for missing spatial information such as LULC and DEM.
             </p>
           </div>
         </div>
@@ -142,7 +156,7 @@
       <section class="alt" id="method">
         <div class="section-inner wide">
           <p class="section-kicker">Method</p>
-          <h2>The ZeroFlood pipeline</h2>
+          <h2>A TerraMind-first pipeline, not just another fine-tune</h2>
           <div class="method-layout">
             <figure class="paper-figure framework-figure">
               <img src="assets/framework.png" alt="ZeroFlood model architecture">
@@ -180,7 +194,7 @@
       <section id="dataset">
         <div class="section-inner wide">
           <p class="section-kicker">Dataset</p>
-          <h2>TerraMesh inputs plus LISFLOOD-FP hazard masks</h2>
+          <h2>Europe-wide evidence base for the finals demo</h2>
           <div class="dataset-grid">
             <figure class="paper-figure">
               <img src="assets/dataset_1.png" alt="ZeroFlood dataset creation diagram">
@@ -194,7 +208,7 @@
           <div class="stat-grid">
             <div><strong data-count="20868" data-format="comma">20,868</strong><span>train samples</span></div>
             <div><strong data-count="5217" data-format="comma">5,217</strong><span>validation samples</span></div>
-            <div><strong data-count="226">226</strong><span>test/demo samples</span></div>
+            <div><strong data-count="225">225</strong><span>curated Europe demo samples</span></div>
             <div><strong>10 m</strong><span>EO tile resolution</span></div>
           </div>
         </div>
@@ -202,12 +216,12 @@
 
       <section class="alt" id="demo">
         <div class="section-inner wide">
-          <p class="section-kicker">Interactive demo</p>
-          <h2>Explore flood predictions by region, modality, and model</h2>
+          <p class="section-kicker">Grand Final demo</p>
+          <h2>Explore the Round 1-winning system across European validation pins</h2>
           <p class="demo-intro">
-            Select a pin or choose a region from the controls. The map starts in a light style to avoid the previous
-            black-map view, and you can switch to satellite or terrain while keeping the pins at their corrected
-            longitude/latitude coordinates.
+            Select a pin or choose a region from the controls to inspect how the finalist system behaves across
+            Europe. Switch between light, satellite, and terrain basemaps, then compare SAR, optical, DEM, LULC,
+            ground truth, and multiple ZeroFlood/TiM flood predictions at corrected longitude/latitude coordinates.
           </p>
           <div class="demo-metrics" aria-label="Demo coverage">
             <div><strong data-count="225">225</strong><span>Europe pins loaded</span></div>
@@ -272,11 +286,12 @@
 
       <section id="results">
         <div class="section-inner wide">
-          <p class="section-kicker">Results</p>
-          <h2>GeoFMs improve flood hazard segmentation</h2>
+          <p class="section-kicker">Finals evidence</p>
+          <h2>What the Grand Final panel should remember</h2>
           <p class="prose results-lead">
-            The paper reports mIoU, F1, recall/HitRate, and precision/TrueAlarm. TerraMind is the strongest base
-            GeoFM, and TiM variants often improve recall by injecting generated modality tokens.
+            The paper reports mIoU, F1, recall/HitRate, and precision/TrueAlarm. The key message for the finals is
+            simple: TerraMind provides the strongest foundation-model baseline, and TiM often improves recall by
+            injecting generated modality tokens when direct inputs are missing.
           </p>
           <ul class="result-takeaways">
             <li><strong>SAR-only prediction is viable:</strong> TerraMind reaches 88.36 F1 from S1RTC alone, beating UNet by 3.70 points.</li>
@@ -340,8 +355,8 @@
 
       <section class="alt" id="citation">
         <div class="section-inner">
-          <p class="section-kicker">Citation</p>
-          <h2>Cite ZeroFlood</h2>
+          <p class="section-kicker">Open science</p>
+          <h2>Paper, code, and reproducibility artifacts</h2>
           <pre class="bibtex" id="bibtex">@article{kim2025zeroflood,
   title={ZeroFlood: Flood Hazard Mapping from Single-Modality SAR Using Geo-Foundation Models},
   author={Kim, Hyeongkyun and Oikonomou, Orestis},
@@ -372,7 +387,7 @@
     </main>
 
     <footer class="footer">
-      <p>ZeroFlood demo page rebuilt from the SIGS paper-page structure and the BlueSky Challenge prototype.</p>
+      <p>ZeroFlood is a Round 1 winner advancing to the TerraMind Blue-Sky Challenge Grand Final, developed into an EUSAR paper and live finals demo.</p>
     </footer>
 
     <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
