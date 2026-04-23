@@ -103,20 +103,28 @@ function formatCoord(value, pos, neg) {
   return `${Math.abs(value).toFixed(4)} ${dir}`;
 }
 
+function lngLat(sample) {
+  // MapLibre expects coordinates in [longitude, latitude] order.
+  return [Number(sample.lon), Number(sample.lat)];
+}
+
 function countrySamples() {
   if (state.country === "all") return state.samples;
   return state.samples.filter((sample) => sample.location === state.country);
 }
 
 function sampleBounds(samples) {
-  const valid = samples.filter((sample) => Number.isFinite(sample.lon) && Number.isFinite(sample.lat));
+  const valid = samples.filter((sample) => {
+    const [longitude, latitude] = lngLat(sample);
+    return Number.isFinite(longitude) && Number.isFinite(latitude);
+  });
   if (!valid.length || !window.maplibregl) return null;
 
   const bounds = new maplibregl.LngLatBounds(
-    [valid[0].lon, valid[0].lat],
-    [valid[0].lon, valid[0].lat],
+    lngLat(valid[0]),
+    lngLat(valid[0]),
   );
-  valid.slice(1).forEach((sample) => bounds.extend([sample.lon, sample.lat]));
+  valid.slice(1).forEach((sample) => bounds.extend(lngLat(sample)));
   return bounds;
 }
 
@@ -125,7 +133,7 @@ function fitSamples(samples, options = {}) {
 
   if (samples.length === 1) {
     state.map[options.animate ? "flyTo" : "jumpTo"]({
-      center: [samples[0].lon, samples[0].lat],
+      center: lngLat(samples[0]),
       zoom: 6,
       duration: options.animate ? 900 : 0,
       essential: true,
@@ -267,7 +275,7 @@ function updateMeta() {
   const sample = state.activeSample;
   if (!sample) return;
   el.sampleTitle.textContent = `${sample.location} / ${sample.id}`;
-  el.sampleCoords.textContent = `${formatCoord(sample.lat, "N", "S")}, ${formatCoord(sample.lon, "E", "W")}`;
+  el.sampleCoords.textContent = `Latitude ${formatCoord(sample.lat, "N", "S")} · Longitude ${formatCoord(sample.lon, "E", "W")}`;
   el.sampleSelect.value = sample.id;
 }
 
@@ -298,7 +306,7 @@ function setActiveSample(sample, options = {}) {
 
   if (options.fly && state.map) {
     state.map.flyTo({
-      center: [sample.lon, sample.lat],
+      center: lngLat(sample),
       zoom: Math.max(state.map.getZoom(), 6.2),
       duration: 1100,
       essential: true,
@@ -338,13 +346,13 @@ function renderMarkers() {
     const node = document.createElement("button");
     node.type = "button";
     node.className = "map-marker";
-    node.title = `${sample.location} ${sample.id}`;
+    node.title = `${sample.location} ${sample.id} | lon ${sample.lon.toFixed(4)}, lat ${sample.lat.toFixed(4)}`;
     node.addEventListener("click", () => {
       setActiveSample(sample, { fly: true });
     });
 
     const marker = new maplibregl.Marker({ element: node, anchor: "center" })
-      .setLngLat([sample.lon, sample.lat])
+      .setLngLat(lngLat(sample))
       .addTo(state.map);
 
     state.markers.set(sample.id, { marker, node, sample });
