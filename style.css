@@ -261,7 +261,7 @@ h2 {
   font-weight: 500;
 }
 
-.finalist-badges {
+.signal-badges {
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -269,7 +269,7 @@ h2 {
   margin-top: 24px;
 }
 
-.finalist-badges span {
+.signal-badges span {
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(15, 111, 255, 0.16);
@@ -286,7 +286,7 @@ h2 {
   text-transform: uppercase;
 }
 
-.finalist-badges span:first-child {
+.signal-badges span:first-child {
   color: #3f2a00;
   border-color: rgba(255, 183, 3, 0.34);
   background: linear-gradient(135deg, rgba(255, 225, 128, 0.92), rgba(255, 255, 255, 0.74));
@@ -439,9 +439,9 @@ h2 {
 
 .hero-stats {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
-  max-width: 760px;
+  max-width: 960px;
   margin: 44px auto 0;
 }
 
@@ -510,7 +510,7 @@ h2 {
 
 .tldr-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
 }
 
