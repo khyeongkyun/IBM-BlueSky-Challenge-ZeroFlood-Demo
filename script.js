@@ -62,10 +62,13 @@ const el = {
   overlaySlider: document.getElementById("overlay-slider"),
   baseLabel: document.getElementById("base-label"),
   overlayLabel: document.getElementById("overlay-label"),
+  mapReset: document.getElementById("map-reset"),
   mapFallback: document.getElementById("map-fallback"),
   copyCitation: document.getElementById("copy-citation"),
   bibtex: document.getElementById("bibtex"),
 };
+
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function basemapStyle(kind) {
   const source = BASEMAPS[kind] || BASEMAPS.light;
@@ -139,6 +142,87 @@ function fitSamples(samples, options = {}) {
     duration: options.animate ? 900 : 0,
     essential: true,
   });
+}
+
+function formatCount(value, counter) {
+  const decimals = Number(counter.dataset.decimals || 0);
+  const formatted = value.toFixed(decimals);
+  return counter.dataset.format === "comma" ? Number(formatted).toLocaleString("en-US") : formatted;
+}
+
+function animateCounter(counter) {
+  if (counter.dataset.animated === "true") return;
+  counter.dataset.animated = "true";
+
+  const target = Number(counter.dataset.count);
+  if (!Number.isFinite(target) || prefersReducedMotion) {
+    counter.textContent = counter.dataset.format === "comma" ? target.toLocaleString("en-US") : counter.textContent;
+    return;
+  }
+
+  const duration = 1100;
+  const startedAt = performance.now();
+
+  function tick(now) {
+    const progress = Math.min((now - startedAt) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    counter.textContent = formatCount(target * eased, counter);
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+
+  requestAnimationFrame(tick);
+}
+
+function initPageEffects() {
+  document.documentElement.classList.add("js-ready");
+
+  const revealTargets = document.querySelectorAll([
+    ".hero-shell",
+    ".section-inner",
+    ".tldr-card",
+    ".paper-figure",
+    ".method-steps article",
+    ".stat-grid div",
+    ".demo-metrics div",
+    ".map-card",
+    ".explorer-card",
+    ".result-takeaways li",
+    ".result-table-card",
+    ".bibtex",
+  ].join(","));
+
+  revealTargets.forEach((target) => target.classList.add("reveal-target"));
+
+  if (!("IntersectionObserver" in window) || prefersReducedMotion) {
+    revealTargets.forEach((target) => target.classList.add("in-view"));
+    document.querySelectorAll("[data-count]").forEach(animateCounter);
+    return;
+  }
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("in-view");
+      entry.target.querySelectorAll("[data-count]").forEach(animateCounter);
+      if (entry.target.matches("[data-count]")) animateCounter(entry.target);
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.16 });
+
+  revealTargets.forEach((target) => revealObserver.observe(target));
+  document.querySelectorAll("[data-count]").forEach((counter) => revealObserver.observe(counter));
+
+  const navLinks = [...document.querySelectorAll(".nav-links a")];
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      navLinks.forEach((link) => {
+        link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`);
+      });
+    });
+  }, { rootMargin: "-34% 0px -52% 0px", threshold: 0.01 });
+
+  document.querySelectorAll("section[id]").forEach((section) => sectionObserver.observe(section));
 }
 
 function populateStaticControls(locations) {
@@ -298,13 +382,21 @@ function bindEvents() {
   });
   el.comparison.style.setProperty("--reveal", `${el.overlaySlider.value}%`);
 
-  document.querySelectorAll(".map-style").forEach((button) => {
+  document.querySelectorAll(".map-style[data-style]").forEach((button) => {
     button.addEventListener("click", () => {
-      document.querySelectorAll(".map-style").forEach((item) => item.classList.remove("active"));
+      document.querySelectorAll(".map-style[data-style]").forEach((item) => item.classList.remove("active"));
       button.classList.add("active");
       state.mapStyle = button.dataset.style;
       if (state.map) state.map.setStyle(basemapStyle(state.mapStyle));
     });
+  });
+
+  el.mapReset.addEventListener("click", () => {
+    state.country = "all";
+    el.countrySelect.value = "all";
+    populateSampleSelect();
+    updateMarkerStates();
+    fitSamples(state.samples, { animate: true });
   });
 
   el.copyCitation.addEventListener("click", async () => {
@@ -334,6 +426,7 @@ async function init() {
   initMap();
 }
 
+initPageEffects();
 init().catch((error) => {
   console.error(error);
   el.sampleTitle.textContent = "Could not load samples";

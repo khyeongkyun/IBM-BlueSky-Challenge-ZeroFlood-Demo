@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <div class="ambient-field" aria-hidden="true"></div>
     <nav class="nav" aria-label="Primary navigation">
       <a class="nav-logo" href="#overview">ZeroFlood</a>
       <div class="nav-links">
@@ -32,6 +33,11 @@
 
     <main>
       <section class="hero" id="overview">
+        <div class="hero-orbit" aria-hidden="true">
+          <span class="orb orb-a"></span>
+          <span class="orb orb-b"></span>
+          <span class="orb orb-c"></span>
+        </div>
         <div class="hero-shell">
           <p class="eyebrow">EUSAR 2026 paper companion</p>
           <h1>ZeroFlood: Flood Hazard Mapping from Single-Modality SAR Using Geo-Foundation Models</h1>
@@ -39,6 +45,13 @@
             A paper-style project page and embedded demo for predicting flood hazard maps with minimal
             Earth-observation inputs in data-scarce regions.
           </p>
+          <div class="hero-radar" aria-hidden="true">
+            <span>EO inputs</span>
+            <i></i>
+            <span>GeoFM reasoning</span>
+            <i></i>
+            <span>Flood hazard map</span>
+          </div>
 
           <p class="authors">
             Hyeongkyun Kim <span>German Aerospace Center (DLR)</span> and Orestis Oikonomou
@@ -70,15 +83,15 @@
 
           <div class="hero-stats" aria-label="Project highlights">
             <div>
-              <strong>226</strong>
+              <strong data-count="226">226</strong>
               <span>interactive test samples</span>
             </div>
             <div>
-              <strong>29</strong>
+              <strong data-count="29">29</strong>
               <span>mapped regions/countries</span>
             </div>
             <div>
-              <strong>89.12</strong>
+              <strong data-count="89.12" data-decimals="2">89.12</strong>
               <span>best S1RTC F1 with TiM-l</span>
             </div>
           </div>
@@ -179,9 +192,9 @@
             </figure>
           </div>
           <div class="stat-grid">
-            <div><strong>20,868</strong><span>train samples</span></div>
-            <div><strong>5,217</strong><span>validation samples</span></div>
-            <div><strong>226</strong><span>test/demo samples</span></div>
+            <div><strong data-count="20868" data-format="comma">20,868</strong><span>train samples</span></div>
+            <div><strong data-count="5217" data-format="comma">5,217</strong><span>validation samples</span></div>
+            <div><strong data-count="226">226</strong><span>test/demo samples</span></div>
             <div><strong>10 m</strong><span>EO tile resolution</span></div>
           </div>
         </div>
@@ -196,6 +209,12 @@
             black-map view, and you can switch to satellite or terrain while keeping the pins at their corrected
             longitude/latitude coordinates.
           </p>
+          <div class="demo-metrics" aria-label="Demo coverage">
+            <div><strong data-count="226">226</strong><span>pins loaded</span></div>
+            <div><strong data-count="29">29</strong><span>regions</span></div>
+            <div><strong data-count="12">12</strong><span>overlay choices</span></div>
+            <div><strong data-count="3">3</strong><span>basemaps</span></div>
+          </div>
 
           <div class="demo-shell">
             <div class="map-card">
@@ -203,6 +222,7 @@
                 <button class="map-style active" data-style="light">Light</button>
                 <button class="map-style" data-style="satellite">Satellite</button>
                 <button class="map-style" data-style="terrain">Terrain</button>
+                <button class="map-style map-reset" id="map-reset" type="button">All pins</button>
               </div>
               <div id="zf-map" aria-label="Map of ZeroFlood validation samples"></div>
               <div class="map-fallback" id="map-fallback" hidden>
