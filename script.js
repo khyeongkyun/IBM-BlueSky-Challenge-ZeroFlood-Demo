@@ -38,6 +38,11 @@ const BASEMAPS = {
   },
 };
 
+const EUROPE_VIEW_BOUNDS = [
+  [-25, 30],
+  [65, 72],
+];
+
 const state = {
   samples: [],
   activeSample: null,
@@ -104,8 +109,8 @@ function formatCoord(value, pos, neg) {
 }
 
 function lngLat(sample) {
-  // MapLibre expects coordinates in [longitude, latitude] order.
-  return [Number(sample.lon), Number(sample.lat)];
+  // MapLibre expects longitude first. Use named fields to avoid lat/lon swaps.
+  return { lng: Number(sample.lon), lat: Number(sample.lat) };
 }
 
 function countrySamples() {
@@ -115,16 +120,20 @@ function countrySamples() {
 
 function sampleBounds(samples) {
   const valid = samples.filter((sample) => {
-    const [longitude, latitude] = lngLat(sample);
-    return Number.isFinite(longitude) && Number.isFinite(latitude);
+    const point = lngLat(sample);
+    return Number.isFinite(point.lng) && Number.isFinite(point.lat);
   });
   if (!valid.length || !window.maplibregl) return null;
 
+  const firstPoint = lngLat(valid[0]);
   const bounds = new maplibregl.LngLatBounds(
-    lngLat(valid[0]),
-    lngLat(valid[0]),
+    [firstPoint.lng, firstPoint.lat],
+    [firstPoint.lng, firstPoint.lat],
   );
-  valid.slice(1).forEach((sample) => bounds.extend(lngLat(sample)));
+  valid.slice(1).forEach((sample) => {
+    const point = lngLat(sample);
+    bounds.extend([point.lng, point.lat]);
+  });
   return bounds;
 }
 
@@ -323,10 +332,11 @@ function initMap() {
   state.map = new maplibregl.Map({
     container: "zf-map",
     style: basemapStyle(state.mapStyle),
-    center: [22, 53],
-    zoom: 3.25,
+    center: [20, 51],
+    zoom: 3.2,
     minZoom: 1.5,
     maxZoom: 12,
+    maxBounds: EUROPE_VIEW_BOUNDS,
     attributionControl: false,
   });
 
