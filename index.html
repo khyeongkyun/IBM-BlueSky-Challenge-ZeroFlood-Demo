@@ -46,9 +46,26 @@
           </p>
 
           <div class="button-row">
-            <a class="button primary" href="paper.pdf" target="_blank" rel="noreferrer">Read paper PDF</a>
-            <a class="button" href="https://github.com/khyeongkyun/zeroflood" target="_blank" rel="noreferrer">Experiment code</a>
-            <a class="button" href="https://huggingface.co/datasets/khyeongkyun/ZeroFlood" target="_blank" rel="noreferrer">Dataset</a>
+            <a class="button primary resource-button" href="https://arxiv.org/abs/2510.23364" target="_blank" rel="noreferrer" aria-label="Open ZeroFlood on arXiv">
+              <span class="resource-icon arxiv-icon" aria-hidden="true">arXiv</span>
+              <span>arXiv</span>
+            </a>
+            <a class="button resource-button" href="https://github.com/khyeongkyun/zeroflood" target="_blank" rel="noreferrer" aria-label="Open ZeroFlood on GitHub">
+              <span class="resource-icon github-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="img">
+                  <path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.6.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.7.1-.7.1-.7 1 .1 1.6 1.1 1.6 1.1.9 1.6 2.4 1.1 2.9.9.1-.7.4-1.1.7-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.8-.1-.3-.4-1.3.1-2.8 0 0 .9-.3 2.8 1.1.8-.2 1.6-.3 2.5-.3s1.7.1 2.5.3c1.9-1.4 2.8-1.1 2.8-1.1.5 1.5.2 2.5.1 2.8.6.8 1 1.7 1 2.8 0 3.9-2.4 4.7-4.6 5 .4.3.7 1 .7 2v2.8c0 .3.2.6.7.5 4-1.3 6.8-5.1 6.8-9.6C22 6.6 17.5 2 12 2Z"/>
+                </svg>
+              </span>
+              <span>GitHub</span>
+            </a>
+            <a class="button resource-button" href="https://huggingface.co/collections/khyeongkyun/zeroflood" target="_blank" rel="noreferrer" aria-label="Open ZeroFlood on Hugging Face">
+              <span class="resource-icon hf-icon" aria-hidden="true">HF</span>
+              <span>Hugging Face</span>
+            </a>
+            <a class="button resource-button" href="paper.pdf" target="_blank" rel="noreferrer" aria-label="Open the local ZeroFlood paper PDF">
+              <span class="resource-icon pdf-icon" aria-hidden="true">PDF</span>
+              <span>PDF</span>
+            </a>
           </div>
 
           <div class="hero-stats" aria-label="Project highlights">
@@ -115,7 +132,7 @@
           <h2>The ZeroFlood pipeline</h2>
           <div class="method-layout">
             <figure class="paper-figure framework-figure">
-              <img src="assets/model.png" alt="ZeroFlood model architecture">
+              <img src="assets/framework.png" alt="ZeroFlood model architecture">
               <figcaption>
                 Minimal inputs (S1RTC, S2L2A, or both) pass through TerraMind and optional Thinking-in-Modality
                 token generation before UPerNet predicts the flood hazard map.

@@ -202,6 +202,7 @@ h2 {
   min-height: 46px;
   align-items: center;
   justify-content: center;
+  gap: 10px;
   border: 1px solid var(--line);
   border-radius: 999px;
   padding: 0 20px;
@@ -223,6 +224,52 @@ h2 {
   box-shadow: 0 12px 28px rgba(15, 111, 255, 0.14);
   text-decoration: none;
   transform: translateY(-2px);
+}
+
+.resource-button {
+  padding: 0 18px 0 10px;
+}
+
+.resource-icon {
+  display: inline-grid;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  place-items: center;
+  border-radius: 999px;
+  font-size: 0.63rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.resource-icon svg {
+  width: 19px;
+  height: 19px;
+  fill: currentColor;
+}
+
+.arxiv-icon {
+  width: 44px;
+  flex-basis: 44px;
+  color: #fff;
+  background: #b31b1b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+}
+
+.github-icon {
+  color: #fff;
+  background: #111827;
+}
+
+.hf-icon {
+  color: #4a2d00;
+  background: linear-gradient(135deg, #ffd86b, #ffad33);
+}
+
+.pdf-icon {
+  color: #123047;
+  background: #d9edf8;
 }
 
 .hero-stats {
@@ -414,13 +461,19 @@ h2 {
 }
 
 .demo-shell {
-  grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.demo-shell > * {
+  min-width: 0;
 }
 
 .map-card {
   position: relative;
   overflow: hidden;
   min-height: 670px;
+  height: 100%;
   background: #e9f5fb;
 }
 
@@ -496,6 +549,10 @@ h2 {
 }
 
 .explorer-card {
+  display: flex;
+  min-height: 670px;
+  height: 100%;
+  flex-direction: column;
   padding: 20px;
 }
 
@@ -735,6 +792,10 @@ tr.best td {
 
   .map-card {
     min-height: 560px;
+  }
+
+  .explorer-card {
+    min-height: auto;
   }
 
   .method-steps {
