@@ -42,6 +42,7 @@ const EUROPE_VIEW_BOUNDS = [
   [-25, 30],
   [65, 72],
 ];
+const SAMPLE_DATA_URL = "data/samples-v2.json?v=coords-4";
 
 const state = {
   samples: [],
@@ -108,9 +109,34 @@ function formatCoord(value, pos, neg) {
   return `${Math.abs(value).toFixed(4)} ${dir}`;
 }
 
-function lngLat(sample) {
-  // MapLibre expects longitude first. Use named fields to avoid lat/lon swaps.
-  return { lng: Number(sample.lon), lat: Number(sample.lat) };
+function isExpectedLngLat(lng, lat) {
+  return lng >= EUROPE_VIEW_BOUNDS[0][0]
+    && lng <= EUROPE_VIEW_BOUNDS[1][0]
+    && lat >= EUROPE_VIEW_BOUNDS[0][1]
+    && lat <= EUROPE_VIEW_BOUNDS[1][1];
+}
+
+function normalizeSample(sample) {
+  const sourcePair = Array.isArray(sample.coordinates) ? sample.coordinates : [sample.lon, sample.lat];
+  let lng = Number(sourcePair[0]);
+  let lat = Number(sourcePair[1]);
+
+  if (!isExpectedLngLat(lng, lat) && isExpectedLngLat(Number(sourcePair[1]), Number(sourcePair[0]))) {
+    lng = Number(sourcePair[1]);
+    lat = Number(sourcePair[0]);
+  }
+
+  return {
+    ...sample,
+    lon: lng,
+    lat,
+    coordinates: [lng, lat],
+  };
+}
+
+function coordinatePair(sample) {
+  // MapLibre expects [longitude, latitude]. This pair is generated from the source CSV lon/lat columns.
+  return [Number(sample.coordinates[0]), Number(sample.coordinates[1])];
 }
 
 function countrySamples() {
@@ -120,20 +146,17 @@ function countrySamples() {
 
 function sampleBounds(samples) {
   const valid = samples.filter((sample) => {
-    const point = lngLat(sample);
-    return Number.isFinite(point.lng) && Number.isFinite(point.lat);
+    const [lng, lat] = coordinatePair(sample);
+    return Number.isFinite(lng) && Number.isFinite(lat);
   });
   if (!valid.length || !window.maplibregl) return null;
 
-  const firstPoint = lngLat(valid[0]);
+  const firstPoint = coordinatePair(valid[0]);
   const bounds = new maplibregl.LngLatBounds(
-    [firstPoint.lng, firstPoint.lat],
-    [firstPoint.lng, firstPoint.lat],
+    firstPoint,
+    firstPoint,
   );
-  valid.slice(1).forEach((sample) => {
-    const point = lngLat(sample);
-    bounds.extend([point.lng, point.lat]);
-  });
+  valid.slice(1).forEach((sample) => bounds.extend(coordinatePair(sample)));
   return bounds;
 }
 
@@ -142,7 +165,7 @@ function fitSamples(samples, options = {}) {
 
   if (samples.length === 1) {
     state.map[options.animate ? "flyTo" : "jumpTo"]({
-      center: lngLat(samples[0]),
+      center: coordinatePair(samples[0]),
       zoom: 6,
       duration: options.animate ? 900 : 0,
       essential: true,
@@ -315,7 +338,7 @@ function setActiveSample(sample, options = {}) {
 
   if (options.fly && state.map) {
     state.map.flyTo({
-      center: lngLat(sample),
+      center: coordinatePair(sample),
       zoom: Math.max(state.map.getZoom(), 6.2),
       duration: 1100,
       essential: true,
@@ -362,7 +385,7 @@ function renderMarkers() {
     });
 
     const marker = new maplibregl.Marker({ element: node, anchor: "center" })
-      .setLngLat(lngLat(sample))
+      .setLngLat(coordinatePair(sample))
       .addTo(state.map);
 
     state.markers.set(sample.id, { marker, node, sample });
@@ -431,9 +454,9 @@ function bindEvents() {
 }
 
 async function init() {
-  const response = await fetch("data/samples.json");
+  const response = await fetch(SAMPLE_DATA_URL);
   const data = await response.json();
-  state.samples = data.samples || [];
+  state.samples = (data.samples || []).map(normalizeSample);
 
   populateStaticControls(data.locations || {});
   bindEvents();
@@ -448,5 +471,5 @@ initPageEffects();
 init().catch((error) => {
   console.error(error);
   el.sampleTitle.textContent = "Could not load samples";
-  el.sampleCoords.textContent = "Check data/samples.json and sample assets.";
+  el.sampleCoords.textContent = "Check data/samples-v2.json and sample assets.";
 });
